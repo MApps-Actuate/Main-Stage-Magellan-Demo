@@ -1,0 +1,360 @@
+/* 
+**********************************************************
+** URL sample : <pageName>?[acType=]&[name=]&[IV=]&[param=]&[size=]                       
+*                                                                 
+** acType : dashboard                     
+*           dashboard-t dashboard with toolbar                            
+*           design     (viewer with no toolBar)                      
+*           design-t   (viewer with toolBar)                         
+*           design-c   (viewer with custom toolBar)
+*           document   (viewer with no toolBar)                         
+*           document-t (viewer with toolBar)                         
+*           document-c (viewer with custom toolBar)  
+*           dd          dashboard designer
+*           rs          report studio (=designer)
+*           da          data analyser (=designer)   
+*           explorer    report explorer
+*           web         embed a web page
+*         
+** name : file name
+*                                                
+** IV : true/false - Enable Interactive Viewer
+*                      
+** param : true/false - display a parameter windows
+* 
+** size : portrait / landscape / mashboard
+**********************************************************
+*/
+/*
+ * URL parsing
+ */
+var host = location.host;
+var parameters = location.pathname.split("/");
+var appName = parameters[3].split('%20').join(' ');
+var pageName = parameters[4];
+
+parameters = location.search.substring(1).split("&");
+var temp = parameters[0].split("=");
+var acType = temp[1];
+temp = parameters[1].split("=");
+var acName = temp[1].split('%20').join(' ');
+temp = parameters[2].split("=");
+var IV = temp[1];
+temp = parameters[3].split("=");
+var withParam = temp[1];
+temp = parameters[4].split("=");
+var size = temp[1];
+
+/*
+ * Generate Actuate component + option
+ */
+if (withParam == "true") {
+	actuate.load('parameter');
+};
+
+if(acType=="explorer") {
+	actuate.load("reportexplorer");
+	actuate.load("viewer");
+};
+
+if(acType=="dashboard" || acType=="dashboard-t") {
+	actuate.load('dashboard');
+	if (acName.substring(0,2) == 'my') {
+		showCustomCSSSection = true;
+		myCSS = "";
+		var dashboardName = myHome + acName + '.dashboard';
+	} else {
+		myCSS = (acType=="dashboard") ? "css/overrideActuate_black.css" : "";
+		var dashboardName = '/Applications/' + appName + '/Dashboards/' + acName + '.dashboard';
+	}
+};
+
+if (acType == "design" || acType == "design-t" || acType == "design-c")  {
+	actuate.load('viewer');
+	if (acName.substring(0,2) == 'my') var designName = myHome + acName + '.rptdesign';
+	else var designName = '/Applications/' + appName + '/Report Designs/' + acName + '.rptdesign';
+};
+if (acType == "document" || acType == "document-t" || acType == "document-c") {
+	actuate.load('viewer');
+	if (acName.substring(0,2) == 'my') var reportName = myHome + acName + '.rptdocument';
+	else var reportName = '/Applications/' + appName + '/Report Designs/' + acName + '.rptdocument';
+};
+
+if (acType == "design-c" || acType == "document-c") {
+	showToolBarSection = true;
+};
+
+
+if (acType != "rs" && acType != "da" && acType != "dd" && acType != "explorer" && acType != "web") {
+	var reqOps = new actuate.RequestOptions( );
+	reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
+
+	if (withParam=="true") {
+		showParamSection = true;
+		actuate.initialize( 'http://' + host + '/iportal/', reqOps==undefined?null:reqOps, null, null, displayParams);
+	} else {
+		actuate.initialize( 'http://' + host + '/iportal/', reqOps==undefined?null:reqOps, null, null, myInit);
+	};
+	
+} else if (acType == "explorer") {
+	showEmbedSection = true;
+	if(!$("#acContainer1").hasClass("acLandscape")) $("#acContainer1").addClass("acLandscape");
+	if(!$("#runTitle").hasClass("runTitle")) $("#runTitle").addClass("runTitle");	
+	$("#runLink").attr("onclick", "alert('Nothing to view')");	
+	
+	var reqOps = new actuate.RequestOptions( );
+	reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
+
+	actuate.initialize( 'http://' + host + '/iportal/', reqOps==undefined?null:reqOps, null, null, myExplorer);
+
+} else if (acType == "web") {
+//	$("#acContainer1").css("background-color","#fff");
+//	$("#acContainer1").load(acName); 
+	var myObj = '<iframe src="' + acName + '" width="100%" height="' + ($(window).height() - 125) + 'px" style="background-color:#fff; border-width:0px"/>';
+	$("#acContainer1").append(myObj);
+
+} else {
+	showEmbedSection = true;
+	if(!$("#acContainer1").hasClass("acDashboard")) $("#defaultDisplaySectionFull").addClass("acDashboard");
+	if(!$("#runTitle").hasClass("embedTitle")) $("#runTitle").addClass("embedTitle");
+	
+/* 
+ * Embed web directly the designer - See additionnal code bellow
+ */
+	if (acType == "dd") {
+		var myObj = '<iframe src="../../dashboard?__design=' + acName + '&__launchDesigner=true&usePersonalDashboard=false&__vp=Default%20Volume&volume=Default%20Volume&showBanner=false"'
+	} else if (acType == "rs") {
+		var myObj = '<iframe src="../../wr?__report=' + acName +  '&__vp=Default Volume&volume=Default Volume" ';	
+	} else if (acType == "da") {		
+		var myObj = '<iframe src="../../da?__data=' + acName + '&__vp=Default Volume&volume=Default Volume&showBanner=false"';
+	};
+	myObj += ' width="100%" height="' + ($(window).height() - 125) + 'px" style="border-width:0px"/>';
+	$("#acContainer1").append(myObj);
+};
+
+/*
+ * Remove the navbar with the OT logo on report studio
+ */
+var $iframe = $('iframe'); 
+$iframe.load(function(){       
+	if (acType == "rs") {
+		var $iframeNav1 = $iframe.contents().find('.navbar'); 
+		$iframeNav1.remove();
+	};
+});
+
+/*
+ * Report Explorer
+ */
+function myExplorer() {
+	var explorer = new actuate.ReportExplorer('acContainer1');
+	explorer.registerEventHandler( actuate.reportexplorer.EventConstants.ON_SELECTION_CHANGED, selectionChanged );
+	explorer.setFolderName("/");
+	var resultDef = "Name|FileType|Version|VersionName|Description";
+	explorer.setResultDef( resultDef.split("|") );
+	explorer.submit( );
+};
+
+function selectionChanged( selectedItem, pathName ){
+	if (selectedItem.getFileType() == 'RPTDOCUMENT') {
+		$("#runLink").attr("onclick", "window.open('../../iv?__report=" +  pathName + "', 'newwindow', 'width=1200, height=800')");
+		
+	} else if (selectedItem.getFileType() == 'RPTDESIGN') {
+		$("#runLink").attr("onclick", "window.open('../../executereport.do?__executableName=" + pathName  + "', 'newwindow', 'width=1200, height=800')");
+		
+	} else if (selectedItem.getFileType() == 'DASHBOARD') {
+		$("#runLink").attr("onclick", "window.open('../../dashboard?conf=" + pathName + "', 'newwindow', 'width=1200, height=800')");		
+		
+	} else {
+		$("#runLink").attr("onclick", "alert('Nothing to view')");	
+	}
+};
+
+/*
+ * Viewer for Report or Dashboard 
+ */
+function displayParams() {
+	param = new actuate.Parameter( 'acParams' );
+	param.setReportName(designName);
+	param.submit();
+};
+
+function processParameters( ) {
+	param.downloadParameterValues(myInit);
+};
+
+
+function myInit(paramValues) {
+	if (acType != "dashboard" && acType != "dashboard-t") {
+		var options = new actuate.viewer.UIOptions( );
+	};		
+	if (acType == "design" || acType == "document") {
+		options.enableToolBar(false);
+		options.enableToolbarContextMenu(false);
+	};
+	if (acType == "design-t" || acType == "document-t") {
+		options.enableToolBar(true);
+	};	
+	if (acType == "design-c" || acType == "document-c") {
+		options.enableToolBar(false);
+		options.enableToolbarContextMenu(false);		
+	};	
+	
+	if (acType == "design" || acType == "design-t" || acType == "design-c") {
+		viewer = new actuate.Viewer( 'acContainer1' );
+		viewer.setReportDesign(designName);
+	};
+	if (acType == "document" || acType == "document-t" || acType == "document-c") {
+		viewer = new actuate.Viewer( 'acContainer1' );
+		viewer.setReportName(reportName);	
+	};
+	if (acType == "dashboard") {
+		viewer = new actuate.Dashboard( 'acContainer1' );
+		viewer.setDashboardName(dashboardName);	
+	};
+	if (acType == "dashboard-t") {
+		viewer = new actuate.Dashboard( 'acContainer1' );
+		viewer.setDashboardName(dashboardName);
+		viewer.setIsDesigner(true);	
+	};
+	if (withParam=="true") {
+		viewer.setParameterValues(paramValues);
+	};
+
+	w = $(window).width();
+	h = $(window).height();
+	
+	if (size == "portrait") {
+		//viewer.setSize(950,1000)
+		viewer.setSize(w - 800, h-80);
+		if(!$("#acContainer1").hasClass("acPortrait")) $("#acContainer1").addClass("acPortrait");
+			
+	} else if (size == "landscape") {
+		viewer.setSize(w - 300, h-80);
+		if (acType != "dashboard" && acType != "dashboard-t") { 
+			if(!$("#acContainer1").hasClass("acLandscape")) $("#acContainer1").addClass("acLandscape");
+		} else {	
+			if(!$("#acContainer1").hasClass("acDashboard")) $("#acContainer1").addClass("acDashboard");
+		}
+	} else if (size == "mashboard") {
+		viewer.setSize(w - 300, h-80);
+		if(!$("#acContainer1").hasClass("acMashboard")) $("#acContainer1").addClass("acMashboard");
+	};
+	
+	if (acType != "dashboard" && acType != "dashboard-t") {
+		viewer.setUIOptions( options );
+	};
+	if(IV=="true") {
+		viewer.submit(function() {viewer.enableIV();});
+	}
+	else {
+		viewer.submit(function(){$('button:contains("Hide")').trigger("click")});
+		//viewer.submit();
+	};
+	
+	initializeCustomCSS();
+	loadCustomCSS(myCSS);
+};
+
+/*
+ * Custom CSS Button
+ */
+function initializeCustomCSS() {
+	$('head').append('<link id="myCSS" rel="stylesheet" type="text/css" href="css/blank.css">');
+};
+
+function loadCustomCSS(url) {
+	if(url.length > 0) {
+		$("#myCSS").attr("href", url);
+	};
+};
+
+
+/*
+ * Custom toolBar
+ */
+
+function doAction(act) {
+	switch (act){
+		case 'first':
+			viewer.gotoPage(1);
+			break;
+		case 'pagedown':
+			if (viewer.getCurrentPageNum() > 1 ) {
+				viewer.gotoPage(viewer.getCurrentPageNum() - 1);
+			}
+			break;
+		case 'pageup':
+			if (viewer.getCurrentPageNum() < viewer.getTotalPageCount()) {
+				viewer.gotoPage(viewer.getCurrentPageNum() + 1);
+			}
+			break;
+		case 'last':
+			viewer.gotoPage(viewer.getTotalPageCount());
+			break;
+		case 'jump':
+			viewer.gotoPage(document.getElementById('jump').value);
+			break;
+		case 'bookmark':
+			viewer.gotoBookmark(document.getElementById('bookmark').value);
+			break;
+		case 'print':
+			viewer.showPrintDialog();
+			break;
+		case 'data':
+			viewer.showDownloadResultSetDialog();
+			break;
+		case 'export':
+			viewer.showDownloadReportDialog();
+			break;
+		case 'download':
+			viewer.downloadReport(document.getElementById('format').value, document.getElementById('pagerange').value);
+			break;
+		case 'PDF':
+			viewer.downloadReport("pdf","1-" + viewer.getTotalPageCount());
+			break;
+		case 'XLSX':
+			viewer.downloadReport("xlsx","1-" + viewer.getTotalPageCount());
+			break;
+	}
+};
+
+function clearFilters() {
+	if(document.jsapiform.EXCELLENT.checked && document.jsapiform.GOOD.checked && document.jsapiform.AVERAGE.checked && document.jsapiform.BAD.checked)
+		return;
+	else {
+		document.jsapiform.EXCELLENT.checked = true;
+		document.jsapiform.GOOD.checked = true;
+		document.jsapiform.AVERAGE.checked = true;
+		document.jsapiform.BAD.checked = true;
+	};				
+};
+
+function applyFilters() {
+	var myFilterString = [3];
+	if(document.jsapiform.EXCELLENT.checked){
+		myFilterString[0] = "EXCELLENT";
+	}; 		
+ 	if(document.jsapiform.GOOD.checked){
+		myFilterString[1] = "GOOD";
+	}; 		
+ 	if(document.jsapiform.AVERAGE.checked){
+		myFilterString[2] = "AVERAGE";
+	}; 		
+	if(document.jsapiform.BAD.checked){
+		myFilterString[3] = "BAD";
+	}; 		
+	
+	var bviewer = viewer;
+	var bpagecontents = bviewer.getCurrentPageContent();
+	var btable = bpagecontents.getTableByBookmark("mySRTable");
+	
+	if (btable == null) return;	// unable to get handle to table
+	
+	var filter = new actuate.data.Filter("AWARD", "IN", myFilterString);
+	var filters = new Array();
+	filters.push(filter);
+	
+	btable.setFilters(filters);
+	btable.submit();
+};

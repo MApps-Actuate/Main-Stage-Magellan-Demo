@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="http://wl-dev-ihubhdp01.opentext.net:8700/iportal/jsapi"></script>
+		<script type="text/javascript" language="JavaScript">
+		var reqOps;
+		var reportfile;
+		var filtered;
+		var viewer;
+		var viewer1;
+
+		function acload()
+		{
+			var iportalurl = "http://wl-dev-ihubhdp01.opentext.net:8700/iportal";
+			//var userlogin = "administrator";
+			//var userpassword = "";
+
+			actuate.load("viewer");
+			
+			reqOps = new actuate.RequestOptions();
+			reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
+			reqOps.setIServerUrl("http://wl-dev-ihubhdp01.opentext.net:8000");
+			reqOps.setVolume("Magellan");
+			reqOps.setVolumeProfile("Magellan");
+			actuate.initialize(iportalurl, reqOps, "administrator", "", createViewer);
+		}
+	
+		function createViewer() {
+			viewer = new actuate.Viewer("leftContent");
+			viewer.setReportName("/Applications/Main Stage Magellan Demo/Report Designs/CarDemandForecastMap.rptdesign");
+			var uiOpts = new actuate.viewer.UIOptions();
+			uiOpts.enableToolBar(false);
+			viewer.setUIOptions(uiOpts);
+			viewer.setContentMargin(0);
+			viewer.setReportletBookmark("Map");
+			viewer.setHeight(600);
+			viewer.submit();
+
+			viewer1 = new actuate.Viewer("rightContent");
+			viewer1.setReportName("/Applications/Main Stage Magellan Demo/Report Designs/CarDemandForecastChart.rptdesign");
+			viewer1.setReportletBookmark("ForecastChart");
+			var uiOpts1 = new actuate.viewer.UIOptions();
+			uiOpts1.enableToolBar(false);
+			viewer1.setUIOptions(uiOpts);
+			viewer1.setContentMargin(0);
+			viewer1.setHeight(600);
+			viewer1.submit();
+//			viewer.submit(afterSubmit);
+
+
+			viewer2 = new actuate.Viewer("bottomContent");
+			viewer2.setReportName("/Applications/Main Stage Magellan Demo/Report Designs/Forecast KPI.rptdesign");
+			var uiOpts2 = new actuate.viewer.UIOptions();
+			uiOpts2.enableToolBar(false);
+			viewer2.setUIOptions(uiOpts2);
+			viewer2.setReportletBookmark("KPI");
+			viewer2.setHeight(180);
+			viewer2.setWidth(1200);
+			viewer2.setContentMargin(5);
+			viewer2.submit();
+
+			//viewer3 = new actuate.Viewer("bottomleftContent");
+			//viewer3.setReportName("/Applications/Main Stage Magellan Demo/Report Designs/Forecast KPI1.rptdesign");
+			//var uiOpts3 = new actuate.viewer.UIOptions();
+			//uiOpts3.enableToolBar(false);
+			//viewer3.setUIOptions(uiOpts3);
+			//viewer3.setContentMargin(0);
+			//viewer3.submit();
+        }
+
+		function afterSubmit () {
+			viewer.enableIV();
+		}
+
+		function ApplyChartFilter(id,name){
+			debugger;
+			//if(hiddenViewer2 == true){
+			//	document.getElementById('acviewer2').style.visibility = 'visible';
+			//	hiddenViewer2 = false;
+			//}
+			//document.onclick = consume();
+	
+			var table = viewer1.getCurrentPageContent().getTableByBookmark("ForecastTable");
+			var chart = viewer1.getCurrentPageContent().getChartByBookmark("ForecastChart");
+			//if(filtered){
+			//	table.clearFilters("Station ID");
+			//}
+			chart.setFilters(new actuate.data.Filter("Station ID", actuate.data.Filter.EQ, id));
+			chart.setChartTitle("28 Day Demand Forecast for "+name);
+			filtered=true;
+			chart.submit();
+		//	table.submit();
+		}
+
+	</script>
+
+	</head>
+	<body style="background:#1D1D1D" onload="acload()">
+	<div id="row1" style="display:flex;flex-direction:row;justify-content: space-around;">
+		<div id="leftContent" style="display:flex;flex-direction:column;border-radius:10px"></div>
+		<div id="rightContent" style="display:flex;flex-direction:column;border-radius:10px"></div>
+	</div>
+	<div id="row2" style="display:flex;flex-direction:row;justify-content: space-around;">
+		<div id="bottomContent" style="display:flex;flex-direction:column"></div>
+	</div>
+	</body>
+</html>

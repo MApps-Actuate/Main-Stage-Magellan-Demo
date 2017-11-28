@@ -1,0 +1,298 @@
+Date,Line,Total Product Cost,Amt,Channel,Promotion,Margin,Type
+12/30/2017,Premium,14231,1532769,Web,Late Day Discount,1364,Projected
+12/30/2017,Standard,41152,16737,Email,Premier Plan Upsell,-765,Projected
+12/30/2017,Corporate,5636,682065,Web,Late Day Discount,1137,Projected
+11/30/2017,Premium,14231,701223,Web,Late Day Discount,1364,Projected
+11/30/2017,Corporate,71152,116151,Email,Premier Plan Upsell,-765,Projected
+11/30/2017,Corporate,5636,1329119,Web,Late Day Discount,1137,Projected
+10/30/2017,Premium,14231,576041,Web,Late Day Discount,1364,Projected
+10/30/2017,Corporate,81152,118171,Email,Premier Plan Upsell,-765,Projected
+10/30/2017,Standard,5636,2417696,Web,Late Day Discount,1137,Projected
+9/30/2017,Premium,14231,941709,Web,Late Day Discount,1364,Projected
+9/30/2017,Corporate,41152,115216,Email,Premier Plan Upsell,-765,Projected
+9/30/2017,Standard,5636,1496563,Web,Late Day Discount,1137,Projected
+8/28/2017,Premium,14231,172248,Web,Late Day Discount,1364,Projected
+8/28/2017,Standard,41152,616278,Email,Premier Plan Upsell,-765,Projected
+8/28/2017,Corporate,5636,2439940,Web,Late Day Discount,1137,Projected
+7/30/2017,Premium,14231,52418,Web,Late Day Discount,1364,Projected
+7/30/2017,Standard,41152,124299,Email,Premier Plan Upsell,-765,Projected
+7/30/2017,Corporate,5636,830219,Web,Late Day Discount,1137,Projected
+6/30/2017,Premium,172525,171829,Email,Student Rebate,-696,Actual
+6/30/2017,Standard,49519,49947,Direct,Premier Plan Upsell,428,Actual
+6/30/2017,Corporate,346003,346653,Web,Student Rebate,650,Actual
+6/30/2017,Premium,35527,37061,Web,Premier Plan Upsell,1534,Actual
+6/30/2017,Standard,33897,35190,Web,Premier Plan Upsell,1293,Actual
+6/30/2017,Corporate,427011,426858,Email,Late Day Discount,-153,Actual
+5/30/2017,Premium,9134,10712,Direct,Late Day Discount,1578,Actual
+5/30/2017,Standard,53655,55182,Direct,Late Day Discount,1527,Actual
+5/30/2017,Corporate,126600,126527,Email,Student Rebate,-73,Actual
+5/30/2017,Premium,50096,51407,Direct,Student Rebate,1311,Actual
+5/30/2017,Standard,350745,351617,Direct,Late Day Discount,872,Actual
+5/30/2017,Corporate,357344,358653,Web,Late Day Discount,1309,Actual
+4/30/2017,Premium,26326,25558,Email,Student Rebate,-768,Actual
+4/30/2017,Standard,15281,16883,Web,Premier Plan Upsell,1602,Actual
+4/30/2017,Corporate,420403,419624,Email,Premier Plan Upsell,-779,Actual
+4/30/2017,Premium,57278,58037,Email,Premier Plan Upsell,759,Actual
+4/30/2017,Standard,413988,414734,Direct,Premier Plan Upsell,746,Actual
+4/30/2017,Corporate,37132,38746,Web,Student Rebate,1614,Actual
+3/30/2017,Premium,160524,161729,Direct,Late Day Discount,1205,Actual
+3/30/2017,Standard,11792,13212,Direct,Late Day Discount,1420,Actual
+3/30/2017,Corporate,426807,428497,Web,Premier Plan Upsell,1690,Actual
+3/30/2017,Premium,44548,46030,Web,Premier Plan Upsell,1482,Actual
+3/30/2017,Standard,230846,231415,Web,Premier Plan Upsell,569,Actual
+3/30/2017,Corporate,352451,352694,Email,Premier Plan Upsell,243,Actual
+2/28/2017,Premium,49302,49963,Web,Premier Plan Upsell,661,Actual
+2/28/2017,Standard,31993,33423,Web,Student Rebate,1430,Actual
+2/28/2017,Corporate,34344,35362,Web,Student Rebate,1018,Actual
+2/28/2017,Premium,54532,55237,Email,Late Day Discount,705,Actual
+2/28/2017,Standard,319393,319450,Email,Student Rebate,57,Actual
+2/28/2017,Corporate,14549,16036,Web,Student Rebate,1487,Actual
+1/31/2017,Premium,7129,8841,Web,Premier Plan Upsell,1712,Actual
+1/31/2017,Standard,446374,446241,Email,Late Day Discount,-133,Actual
+1/31/2017,Corporate,431162,431415,Email,Student Rebate,253,Actual
+1/31/2017,Premium,239776,241516,Direct,Premier Plan Upsell,1740,Actual
+1/31/2017,Standard,10085,11777,Direct,Premier Plan Upsell,1692,Actual
+1/31/2017,Corporate,9459,10772,Direct,Late Day Discount,1313,Actual
+12/30/2016,Premium,14231,515595,Web,Late Day Discount,1364,Actual
+12/30/2016,Standard,41152,40387,Email,Premier Plan Upsell,-765,Actual
+12/30/2016,Corporate,5636,6773,Web,Late Day Discount,1137,Actual
+11/30/2016,Premium,160850,161526,Email,Student Rebate,676,Actual
+11/30/2016,Standard,37721,39318,Web,Student Rebate,1597,Actual
+11/30/2016,Corporate,453725,454432,Direct,Late Day Discount,707,Actual
+10/30/2016,Premium,4632,5435,Direct,Premier Plan Upsell,803,Actual
+10/30/2016,Standard,1030301,1031140,Email,Premier Plan Upsell,839,Actual
+10/30/2016,Corporate,55675,54540,Email,Premier Plan Upsell,-1135,Actual
+10/30/2016,Premium,25381,26502,Direct,Late Day Discount,1121,Actual
+10/30/2016,Standard,31711,31801,Email,Premier Plan Upsell,90,Actual
+10/30/2016,Corporate,418182,417592,Email,Late Day Discount,-590,Actual
+9/30/2016,Premium,7267,8483,Web,Premier Plan Upsell,1216,Actual
+9/30/2016,Standard,1238963,1239393,Web,Student Rebate,430,Actual
+9/30/2016,Corporate,449077,448190,Email,Late Day Discount,-887,Actual
+9/30/2016,Premium,8114,8581,Direct,Student Rebate,467,Actual
+9/30/2016,Standard,455373,457015,Web,Late Day Discount,1642,Actual
+9/30/2016,Corporate,42907,44233,Direct,Late Day Discount,1326,Actual
+8/29/2016,Premium,6810,6388,Email,Student Rebate,-422,Actual
+8/29/2016,Standard,412417,412321,Email,Premier Plan Upsell,-96,Actual
+8/29/2016,Corporate,40825,40910,Direct,Premier Plan Upsell,85,Actual
+8/29/2016,Premium,23381,24181,Direct,Premier Plan Upsell,800,Actual
+8/29/2016,Standard,439150,439930,Web,Student Rebate,780,Actual
+8/29/2016,Corporate,49378,50863,Direct,Student Rebate,1485,Actual
+7/31/2016,Premium,8837,9719,Direct,Premier Plan Upsell,882,Actual
+7/31/2016,Standard,59283,59460,Direct,Student Rebate,177,Actual
+7/31/2016,Corporate,29525,30899,Email,Premier Plan Upsell,1374,Actual
+7/31/2016,Premium,43041,44461,Web,Student Rebate,1420,Actual
+7/31/2016,Standard,414092,415617,Web,Premier Plan Upsell,1525,Actual
+7/31/2016,Corporate,15921,17676,Web,Late Day Discount,1755,Actual
+6/30/2016,Premium,172525,171829,Email,Student Rebate,-696,Actual
+6/30/2016,Standard,49519,49947,Direct,Premier Plan Upsell,428,Actual
+6/30/2016,Corporate,346003,346653,Web,Student Rebate,650,Actual
+6/30/2016,Premium,35527,37061,Web,Premier Plan Upsell,1534,Actual
+6/30/2016,Standard,33897,35190,Web,Premier Plan Upsell,1293,Actual
+6/30/2016,Corporate,427011,426858,Email,Late Day Discount,-153,Actual
+5/30/2016,Premium,9134,10712,Direct,Late Day Discount,1578,Actual
+5/30/2016,Standard,53655,55182,Direct,Late Day Discount,1527,Actual
+5/30/2016,Corporate,126600,126527,Email,Student Rebate,-73,Actual
+5/30/2016,Premium,50096,51407,Direct,Student Rebate,1311,Actual
+5/30/2016,Standard,350745,351617,Direct,Late Day Discount,872,Actual
+5/30/2016,Corporate,357344,358653,Web,Late Day Discount,1309,Actual
+4/30/2016,Premium,26326,25558,Email,Student Rebate,-768,Actual
+4/30/2016,Standard,15281,16883,Web,Premier Plan Upsell,1602,Actual
+4/30/2016,Corporate,420403,419624,Email,Premier Plan Upsell,-779,Actual
+4/30/2016,Premium,57278,58037,Email,Premier Plan Upsell,759,Actual
+4/30/2016,Standard,413988,414734,Direct,Premier Plan Upsell,746,Actual
+4/30/2016,Corporate,37132,38746,Web,Student Rebate,1614,Actual
+3/30/2016,Premium,160524,161729,Direct,Late Day Discount,1205,Actual
+3/30/2016,Standard,11792,13212,Direct,Late Day Discount,1420,Actual
+3/30/2016,Corporate,426807,428497,Web,Premier Plan Upsell,1690,Actual
+3/30/2016,Premium,44548,46030,Web,Premier Plan Upsell,1482,Actual
+3/30/2016,Standard,230846,231415,Web,Premier Plan Upsell,569,Actual
+3/30/2016,Corporate,352451,352694,Email,Premier Plan Upsell,243,Actual
+2/28/2016,Premium,49302,49963,Web,Premier Plan Upsell,661,Actual
+2/28/2016,Standard,31993,33423,Web,Student Rebate,1430,Actual
+2/28/2016,Corporate,34344,35362,Web,Student Rebate,1018,Actual
+2/28/2016,Premium,54532,55237,Email,Late Day Discount,705,Actual
+2/28/2016,Standard,319393,319450,Email,Student Rebate,57,Actual
+2/28/2016,Corporate,14549,16036,Web,Student Rebate,1487,Actual
+1/31/2016,Premium,7129,8841,Web,Premier Plan Upsell,1712,Actual
+1/31/2016,Standard,446374,446241,Email,Late Day Discount,-133,Actual
+1/31/2016,Corporate,431162,431415,Email,Student Rebate,253,Actual
+1/31/2016,Premium,239776,241516,Direct,Premier Plan Upsell,1740,Actual
+1/31/2016,Standard,10085,11777,Direct,Premier Plan Upsell,1692,Actual
+1/31/2016,Corporate,9459,10772,Direct,Late Day Discount,1313,Actual
+12/30/2015,Premium,5365,6180,Web,Premier Plan Upsell,815,Actual
+12/30/2015,Standard,337085,337825,Direct,Premier Plan Upsell,740,Actual
+12/30/2015,Corporate,333192,334217,Direct,Late Day Discount,1025,Actual
+12/30/2015,Premium,39621,41364,Web,Late Day Discount,1743,Actual
+12/30/2015,Standard,46459,46683,Web,Late Day Discount,224,Actual
+12/30/2015,Corporate,36281,36562,Web,Student Rebate,281,Actual
+11/30/2015,Premium,25281,26517,Direct,Student Rebate,1236,Actual
+11/30/2015,Standard,431616,431485,Email,Premier Plan Upsell,-131,Actual
+11/30/2015,Corporate,53154,54089,Web,Late Day Discount,935,Actual
+11/30/2015,Premium,48728,49094,Direct,Late Day Discount,366,Actual
+11/30/2015,Standard,7389,7658,Direct,Student Rebate,269,Actual
+11/30/2015,Corporate,38045,38518,Direct,Student Rebate,473,Actual
+10/30/2015,Premium,49827,51627,Direct,Late Day Discount,1800,Actual
+10/30/2015,Standard,440401,441927,Direct,Premier Plan Upsell,1526,Actual
+10/30/2015,Corporate,46263,46754,Direct,Late Day Discount,491,Actual
+10/30/2015,Premium,40608,42365,Web,Late Day Discount,1757,Actual
+10/30/2015,Standard,54027,54549,Web,Premier Plan Upsell,522,Actual
+10/30/2015,Corporate,44387,44723,Direct,Late Day Discount,336,Actual
+9/30/2015,Premium,52725,53231,Email,Late Day Discount,506,Actual
+9/30/2015,Standard,37329,37657,Web,Late Day Discount,328,Actual
+9/30/2015,Corporate,445142,445249,Direct,Late Day Discount,107,Actual
+9/30/2015,Premium,9281,9919,Direct,Student Rebate,638,Actual
+9/30/2015,Standard,31731,32164,Email,Late Day Discount,433,Actual
+9/30/2015,Corporate,34756,35055,Web,Student Rebate,299,Actual
+8/28/2015,Premium,38200,38479,Email,Late Day Discount,279,Actual
+8/28/2015,Standard,240861,241516,Email,Student Rebate,655,Actual
+8/28/2015,Corporate,47236,47910,Web,Student Rebate,674,Actual
+8/28/2015,Premium,43819,44261,Email,Late Day Discount,442,Actual
+8/28/2015,Standard,17987,18840,Web,Student Rebate,853,Actual
+8/28/2015,Corporate,150073,151625,Direct,Premier Plan Upsell,1552,Actual
+7/31/2015,Premium,30132,30648,Direct,Student Rebate,516,Actual
+7/31/2015,Standard,219629,221054,Direct,Premier Plan Upsell,1425,Actual
+7/31/2015,Corporate,256532,258132,Web,Student Rebate,1600,Actual
+7/31/2015,Premium,49715,50349,Direct,Student Rebate,634,Actual
+7/31/2015,Standard,21740,22662,Direct,Premier Plan Upsell,922,Actual
+7/31/2015,Corporate,43855,45102,Direct,Premier Plan Upsell,1247,Actual
+6/30/2015,Premium,46121,46777,Direct,Premier Plan Upsell,656,Actual
+6/30/2015,Standard,241828,241516,Email,Late Day Discount,-312,Actual
+6/30/2015,Corporate,44073,43163,Email,Student Rebate,-910,Actual
+6/30/2015,Premium,26268,27367,Web,Premier Plan Upsell,1099,Actual
+6/30/2015,Standard,161876,162516,Direct,Late Day Discount,640,Actual
+6/30/2015,Corporate,13252,13751,Direct,Premier Plan Upsell,499,Actual
+5/30/2015,Premium,47281,48986,Direct,Student Rebate,1705,Actual
+5/30/2015,Standard,149352,148690,Email,Late Day Discount,-662,Actual
+5/30/2015,Corporate,35258,34613,Email,Late Day Discount,-645,Actual
+5/30/2015,Premium,17674,18476,Direct,Student Rebate,802,Actual
+5/30/2015,Standard,32326,32746,Direct,Late Day Discount,420,Actual
+5/30/2015,Corporate,21600,22398,Email,Late Day Discount,798,Actual
+4/30/2015,Premium,48101,48868,Direct,Late Day Discount,767,Actual
+4/30/2015,Standard,161099,161516,Email,Late Day Discount,417,Actual
+4/30/2015,Corporate,34992,34751,Email,Late Day Discount,-241,Actual
+4/30/2015,Premium,35882,35034,Email,Late Day Discount,-848,Actual
+4/30/2015,Standard,27760,29131,Web,Late Day Discount,1371,Actual
+4/30/2015,Corporate,40866,41193,Web,Late Day Discount,327,Actual
+3/30/2015,Premium,34032,34572,Direct,Student Rebate,540,Actual
+3/30/2015,Standard,349926,350100,Web,Student Rebate,174,Actual
+3/30/2015,Corporate,48370,49418,Web,Premier Plan Upsell,1048,Actual
+3/30/2015,Premium,260876,261514,Web,Student Rebate,638,Actual
+3/30/2015,Standard,50446,51880,Web,Late Day Discount,1434,Actual
+3/30/2015,Corporate,19460,19261,Email,Late Day Discount,-199,Actual
+2/28/2015,Premium,50073,51340,Web,Late Day Discount,1267,Actual
+2/28/2015,Standard,340195,339779,Email,Premier Plan Upsell,-416,Actual
+2/28/2015,Corporate,42603,41537,Email,Premier Plan Upsell,-1066,Actual
+2/28/2015,Premium,35931,36156,Email,Premier Plan Upsell,225,Actual
+2/28/2015,Standard,10617,12357,Direct,Premier Plan Upsell,1740,Actual
+2/28/2015,Corporate,34259,34868,Email,Student Rebate,609,Actual
+1/31/2015,Premium,26352,25795,Email,Late Day Discount,-557,Actual
+1/31/2015,Standard,228603,229101,Direct,Premier Plan Upsell,498,Actual
+1/31/2015,Corporate,250797,251415,Direct,Late Day Discount,618,Actual
+1/31/2015,Premium,29791,29943,Direct,Late Day Discount,152,Actual
+1/31/2015,Standard,10083,11513,Web,Student Rebate,1430,Actual
+1/31/2015,Corporate,35579,36116,Email,Premier Plan Upsell,537,Actual
+12/30/2014,Premium,60108,59515,Email,Late Day Discount,-593,Actual
+12/30/2014,Standard,51509,52342,Email,Student Rebate,833,Actual
+12/30/2014,Corporate,54993,56665,Direct,Premier Plan Upsell,1672,Actual
+11/30/2014,Premium,24158,25618,Direct,Student Rebate,1460,Actual
+11/30/2014,Standard,14493,15720,Web,Premier Plan Upsell,1227,Actual
+11/30/2014,Corporate,126749,127716,Direct,Late Day Discount,967,Actual
+10/30/2014,Premium,16444,16986,Direct,Student Rebate,542,Actual
+10/30/2014,Standard,51500,52099,Email,Premier Plan Upsell,599,Actual
+10/30/2014,Corporate,152359,152625,Email,Premier Plan Upsell,266,Actual
+9/30/2014,Premium,31648,33336,Web,Student Rebate,1688,Actual
+9/30/2014,Standard,33095,33290,Web,Late Day Discount,195,Actual
+9/30/2014,Corporate,59196,59750,Direct,Late Day Discount,554,Actual
+8/28/2014,Premium,7487,7525,Direct,Student Rebate,38,Actual
+8/28/2014,Standard,58373,59081,Web,Premier Plan Upsell,708,Actual
+8/28/2014,Corporate,28906,27974,Email,Student Rebate,-932,Actual
+7/31/2014,Premium,15942,16990,Direct,Late Day Discount,1048,Actual
+7/31/2014,Standard,57979,58248,Web,Late Day Discount,269,Actual
+7/31/2014,Corporate,57608,58043,Web,Student Rebate,435,Actual
+6/30/2014,Premium,43639,44936,Direct,Premier Plan Upsell,1297,Actual
+6/30/2014,Standard,23947,24702,Email,Premier Plan Upsell,755,Actual
+6/30/2014,Corporate,16274,16867,Email,Premier Plan Upsell,593,Actual
+5/30/2014,Premium,169034,170283,Direct,Premier Plan Upsell,1249,Actual
+5/30/2014,Standard,8853,9952,Web,Student Rebate,1099,Actual
+5/30/2014,Corporate,224913,225265,Web,Student Rebate,352,Actual
+4/30/2014,Premium,77760,78283,Web,Premier Plan Upsell,523,Actual
+4/30/2014,Standard,7445,6427,Email,Late Day Discount,-1018,Actual
+4/30/2014,Corporate,226986,228385,Web,Late Day Discount,1399,Actual
+3/30/2014,Premium,135012,136046,Direct,Student Rebate,1034,Actual
+3/30/2014,Standard,13544,13660,Email,Student Rebate,116,Actual
+3/30/2014,Corporate,88852,88946,Web,Late Day Discount,94,Actual
+2/28/2014,Premium,133436,134212,Direct,Premier Plan Upsell,776,Actual
+2/28/2014,Standard,335,814,Web,Student Rebate,479,Actual
+2/28/2014,Corporate,194334,195404,Direct,Late Day Discount,1070,Actual
+1/31/2014,Premium,59757,60117,Direct,Late Day Discount,360,Actual
+1/31/2014,Standard,1690,2591,Direct,Student Rebate,901,Actual
+1/31/2014,Corporate,164916,166493,Direct,Premier Plan Upsell,1577,Actual
+12/30/2013,Premium,73315,74049,Direct,Student Rebate,734,Actual
+12/30/2013,Standard,1765,2726,Web,Premier Plan Upsell,961,Actual
+12/30/2013,Corporate,55051,55982,Direct,Student Rebate,931,Actual
+11/30/2013,Premium,186995,187210,Direct,Student Rebate,215,Actual
+11/30/2013,Standard,8612,9833,Direct,Student Rebate,1221,Actual
+11/30/2013,Corporate,281815,282126,Web,Student Rebate,311,Actual
+10/30/2013,Premium,72991,73969,Direct,Late Day Discount,978,Actual
+10/30/2013,Standard,4937,5852,Direct,Student Rebate,915,Actual
+10/30/2013,Corporate,196559,198263,Direct,Student Rebate,1704,Actual
+9/30/2013,Premium,145525,145732,Email,Student Rebate,207,Actual
+9/30/2013,Standard,15194,15599,Web,Premier Plan Upsell,405,Actual
+9/30/2013,Corporate,105356,107049,Direct,Premier Plan Upsell,1693,Actual
+8/28/2013,Premium,193332,193628,Web,Student Rebate,296,Actual
+8/28/2013,Standard,11426,11763,Email,Late Day Discount,337,Actual
+8/28/2013,Corporate,222227,223763,Web,Student Rebate,1536,Actual
+7/31/2013,Premium,112764,113576,Email,Student Rebate,812,Actual
+7/31/2013,Standard,22122,23346,Web,Premier Plan Upsell,1224,Actual
+7/31/2013,Corporate,232371,231473,Email,Student Rebate,-898,Actual
+6/30/2013,Premium,132807,134185,Web,Student Rebate,1378,Actual
+6/30/2013,Standard,41622,41490,Email,Student Rebate,-132,Actual
+6/30/2013,Corporate,86414,86633,Email,Student Rebate,219,Actual
+5/30/2013,Premium,170049,170221,Web,Late Day Discount,172,Actual
+5/30/2013,Standard,122234,123037,Email,Premier Plan Upsell,803,Actual
+4/30/2013,Premium,68978,70536,Direct,Late Day Discount,1558,Actual
+4/30/2013,Standard,132595,132976,Email,Premier Plan Upsell,381,Actual
+3/30/2013,Premium,180915,179750,Email,Premier Plan Upsell,-1165,Actual
+3/30/2013,Standard,104935,106445,Direct,Student Rebate,1510,Actual
+2/28/2013,Premium,149960,151051,Web,Late Day Discount,1091,Actual
+2/28/2013,Standard,99393,100987,Direct,Student Rebate,1594,Actual
+1/31/2013,Premium,76097,76018,Email,Student Rebate,-79,Actual
+1/31/2013,Standard,109113,109940,Email,Student Rebate,827,Actual
+12/30/2012,Premium,109142,109834,Web,Late Day Discount,692,Actual
+12/30/2012,Standard,61178,61445,Web,Late Day Discount,267,Actual
+11/30/2012,Premium,184039,184286,Web,Student Rebate,247,Actual
+11/30/2012,Standard,106371,106139,Email,Student Rebate,-232,Actual
+10/30/2012,Premium,98358,98633,Web,Premier Plan Upsell,275,Actual
+10/30/2012,Standard,125099,125716,Email,Premier Plan Upsell,617,Actual
+9/30/2012,Premium,155309,155826,Direct,Premier Plan Upsell,517,Actual
+9/30/2012,Standard,86393,88091,Web,Late Day Discount,1698,Actual
+8/29/2012,Premium,207131,208229,Direct,Student Rebate,1098,Actual
+8/29/2012,Standard,113839,115037,Web,Premier Plan Upsell,1198,Actual
+7/31/2012,Premium,135222,136911,Web,Premier Plan Upsell,1689,Actual
+7/31/2012,Standard,123673,123467,Email,Student Rebate,-206,Actual
+6/30/2012,Premium,230269,230680,Direct,Late Day Discount,411,Actual
+6/30/2012,Standard,129649,130331,Direct,Student Rebate,682,Actual
+5/30/2012,Premium,9497,9291,Email,Premier Plan Upsell,-206,Actual
+5/30/2012,Standard,32169,32530,Direct,Late Day Discount,361,Actual
+4/30/2012,Premium,44634,46252,Web,Student Rebate,1618,Actual
+4/30/2012,Standard,39143,39713,Web,Late Day Discount,570,Actual
+3/30/2012,Premium,26912,27303,Web,Late Day Discount,391,Actual
+3/30/2012,Standard,61655,60520,Email,Late Day Discount,-1135,Actual
+2/28/2012,Premium,82595,83353,Direct,Late Day Discount,758,Actual
+2/28/2012,Standard,33979,34601,Direct,Student Rebate,622,Actual
+1/31/2012,Premium,35500,34690,Email,Late Day Discount,-810,Actual
+1/31/2012,Standard,32432,33076,Direct,Student Rebate,644,Actual
+12/30/2011,Premium,21883,22873,Direct,Student Rebate,990,Actual
+12/30/2011,Standard,35646,36230,Email,Student Rebate,584,Actual
+11/30/2011,Premium,73416,74565,Direct,Premier Plan Upsell,1149,Actual
+11/30/2011,Standard,41865,42194,Web,Premier Plan Upsell,329,Actual
+10/30/2011,Premium,47136,47998,Web,Late Day Discount,862,Actual
+10/30/2011,Standard,38934,39042,Direct,Premier Plan Upsell,108,Actual
+9/30/2011,Premium,46051,47266,Direct,Student Rebate,1215,Actual
+9/30/2011,Standard,52451,51787,Email,Premier Plan Upsell,-664,Actual
+8/28/2011,Premium,58787,58710,Email,Premier Plan Upsell,-77,Actual
+8/28/2011,Standard,18719,19205,Web,Late Day Discount,486,Actual
+7/31/2011,Premium,46606,47352,Web,Late Day Discount,746,Actual
+7/31/2011,Standard,21148,20188,Email,Premier Plan Upsell,-960,Actual
+6/30/2011,Premium,12487,13076,Web,Late Day Discount,589,Actual
+6/30/2011,Standard,37330,37470,Web,Student Rebate,140,Actual

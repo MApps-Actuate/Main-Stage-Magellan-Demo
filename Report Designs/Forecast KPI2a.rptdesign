@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <property name="backgroundColor">#1D1D1D</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <property name="fontFamily">"Segoe UI"</property>
+            <property name="color">#F5F5F5</property>
+            <column id="5">
+                <property name="textAlign">center</property>
+            </column>
+            <column id="6">
+                <property name="textAlign">center</property>
+            </column>
+            <column id="44">
+                <property name="textAlign">center</property>
+            </column>
+            <row id="32">
+                <cell id="33">
+                    <label id="20">
+                        <property name="fontSize">12pt</property>
+                        <property name="textUnderline">underline</property>
+                        <text-property name="text">Busiest Area</text-property>
+                    </label>
+                </cell>
+                <cell id="34">
+                    <label id="30">
+                        <property name="fontSize">12pt</property>
+                        <property name="textUnderline">underline</property>
+                        <text-property name="text">Peak Days</text-property>
+                    </label>
+                </cell>
+                <cell id="42">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="verticalAlign">middle</property>
+                    <grid id="45">
+                        <column id="7">
+                            <property name="textAlign">center</property>
+                        </column>
+                        <row id="8">
+                            <cell id="9">
+                                <text id="46">
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<!-- weather widget start --><a target="_blank" href="http://www.booked.net/weather/toronto-30558"><img src="https://w.bookcdn.com/weather/picture/3_30558_1_1_1d1d1d_379_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&amp;domid=w209&amp;anc_id=95132"  alt="booked.net"/></a><!-- weather widget end -->]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="35">
+                <cell id="36">
+                    <property name="verticalAlign">middle</property>
+                    <label id="41">
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Old Toronto</text-property>
+                    </label>
+                </cell>
+                <cell id="37">
+                    <property name="verticalAlign">middle</property>
+                    <label id="31">
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">3</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

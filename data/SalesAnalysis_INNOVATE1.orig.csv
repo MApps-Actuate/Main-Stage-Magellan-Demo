@@ -1,0 +1,298 @@
+Date,Line,Total Product Cost,Amt,Channel,Promotion,Margin,Type
+12/31/2016,Premium,14231,1532769,Web,Non Discount Promotion,1364,Projected
+12/31/2016,Standard,41152,16737,Email,New Product Launch,-765,Projected
+12/31/2016,Corporate,5636,682065,Web,Non Discount Promotion,1137,Projected
+11/30/2016,Premium,14231,701223,Web,Non Discount Promotion,1364,Projected
+11/30/2016,Corporate,71152,116151,Email,New Product Launch,-765,Projected
+11/30/2016,Corporate,5636,1329119,Web,Non Discount Promotion,1137,Projected
+10/30/2016,Premium,14231,576041,Web,Non Discount Promotion,1364,Projected
+10/30/2016,Corporate,81152,118171,Email,New Product Launch,-765,Projected
+10/30/2016,Standard,5636,2417696,Web,Non Discount Promotion,1137,Projected
+9/30/2016,Premium,14231,941709,Web,Non Discount Promotion,1364,Projected
+9/30/2016,Corporate,41152,115216,Email,New Product Launch,-765,Projected
+9/30/2016,Standard,5636,1496563,Web,Non Discount Promotion,1137,Projected
+8/30/2016,Premium,14231,172248,Web,Non Discount Promotion,1364,Projected
+8/30/2016,Standard,41152,616278,Email,New Product Launch,-765,Projected
+8/30/2016,Corporate,5636,2439940,Web,Non Discount Promotion,1137,Projected
+7/30/2016,Premium,14231,52418,Web,Non Discount Promotion,1364,Projected
+7/30/2016,Standard,41152,124299,Email,New Product Launch,-765,Projected
+7/30/2016,Corporate,5636,830219,Web,Non Discount Promotion,1137,Projected
+6/30/2016,Premium,172525,171829,Email,Seasonal Discount,-696,Actual
+6/30/2016,Standard,49519,49947,Direct,New Product Launch,428,Actual
+6/30/2016,Corporate,346003,346653,Web,Seasonal Discount,650,Actual
+6/30/2016,Premium,35527,37061,Web,New Product Launch,1534,Actual
+6/30/2016,Standard,33897,35190,Web,New Product Launch,1293,Actual
+6/30/2016,Corporate,427011,426858,Email,Non Discount Promotion,-153,Actual
+5/31/2016,Premium,9134,10712,Direct,Non Discount Promotion,1578,Actual
+5/31/2016,Standard,53655,55182,Direct,Non Discount Promotion,1527,Actual
+5/31/2016,Corporate,126600,126527,Email,Seasonal Discount,-73,Actual
+5/31/2016,Premium,50096,51407,Direct,Seasonal Discount,1311,Actual
+5/31/2016,Standard,350745,351617,Direct,Non Discount Promotion,872,Actual
+5/31/2016,Corporate,357344,358653,Web,Non Discount Promotion,1309,Actual
+4/30/2016,Premium,26326,25558,Email,Seasonal Discount,-768,Actual
+4/30/2016,Standard,15281,16883,Web,New Product Launch,1602,Actual
+4/30/2016,Corporate,420403,419624,Email,New Product Launch,-779,Actual
+4/30/2016,Premium,57278,58037,Email,New Product Launch,759,Actual
+4/30/2016,Standard,413988,414734,Direct,New Product Launch,746,Actual
+4/30/2016,Corporate,37132,38746,Web,Seasonal Discount,1614,Actual
+3/31/2016,Premium,160524,161729,Direct,Non Discount Promotion,1205,Actual
+3/31/2016,Standard,11792,13212,Direct,Non Discount Promotion,1420,Actual
+3/31/2016,Corporate,426807,428497,Web,New Product Launch,1690,Actual
+3/31/2016,Premium,44548,46030,Web,New Product Launch,1482,Actual
+3/31/2016,Standard,230846,231415,Web,New Product Launch,569,Actual
+3/31/2016,Corporate,352451,352694,Email,New Product Launch,243,Actual
+2/28/2016,Premium,49302,49963,Web,New Product Launch,661,Actual
+2/28/2016,Standard,31993,33423,Web,Seasonal Discount,1430,Actual
+2/28/2016,Corporate,34344,35362,Web,Seasonal Discount,1018,Actual
+2/28/2016,Premium,54532,55237,Email,Non Discount Promotion,705,Actual
+2/28/2016,Standard,319393,319450,Email,Seasonal Discount,57,Actual
+2/28/2016,Corporate,14549,16036,Web,Seasonal Discount,1487,Actual
+1/31/2016,Premium,7129,8841,Web,New Product Launch,1712,Actual
+1/31/2016,Standard,446374,446241,Email,Non Discount Promotion,-133,Actual
+1/31/2016,Corporate,431162,431415,Email,Seasonal Discount,253,Actual
+1/31/2016,Premium,239776,241516,Direct,New Product Launch,1740,Actual
+1/31/2016,Standard,10085,11777,Direct,New Product Launch,1692,Actual
+1/31/2016,Corporate,9459,10772,Direct,Non Discount Promotion,1313,Actual
+12/31/2015,Premium,14231,515595,Web,Non Discount Promotion,1364,Actual
+12/31/2015,Standard,41152,40387,Email,New Product Launch,-765,Actual
+12/31/2015,Corporate,5636,6773,Web,Non Discount Promotion,1137,Actual
+11/30/2015,Premium,160850,161526,Email,Seasonal Discount,676,Actual
+11/30/2015,Standard,37721,39318,Web,Seasonal Discount,1597,Actual
+11/30/2015,Corporate,453725,454432,Direct,Non Discount Promotion,707,Actual
+10/31/2015,Premium,4632,5435,Direct,New Product Launch,803,Actual
+10/31/2015,Standard,1030301,1031140,Email,New Product Launch,839,Actual
+10/31/2015,Corporate,55675,54540,Email,New Product Launch,-1135,Actual
+10/31/2015,Premium,25381,26502,Direct,Non Discount Promotion,1121,Actual
+10/31/2015,Standard,31711,31801,Email,New Product Launch,90,Actual
+10/31/2015,Corporate,418182,417592,Email,Non Discount Promotion,-590,Actual
+9/30/2015,Premium,7267,8483,Web,New Product Launch,1216,Actual
+9/30/2015,Standard,1238963,1239393,Web,Seasonal Discount,430,Actual
+9/30/2015,Corporate,449077,448190,Email,Non Discount Promotion,-887,Actual
+9/30/2015,Premium,8114,8581,Direct,Seasonal Discount,467,Actual
+9/30/2015,Standard,455373,457015,Web,Non Discount Promotion,1642,Actual
+9/30/2015,Corporate,42907,44233,Direct,Non Discount Promotion,1326,Actual
+8/31/2015,Premium,6810,6388,Email,Seasonal Discount,-422,Actual
+8/31/2015,Standard,412417,412321,Email,New Product Launch,-96,Actual
+8/31/2015,Corporate,40825,40910,Direct,New Product Launch,85,Actual
+8/31/2015,Premium,23381,24181,Direct,New Product Launch,800,Actual
+8/31/2015,Standard,439150,439930,Web,Seasonal Discount,780,Actual
+8/31/2015,Corporate,49378,50863,Direct,Seasonal Discount,1485,Actual
+7/31/2015,Premium,8837,9719,Direct,New Product Launch,882,Actual
+7/31/2015,Standard,59283,59460,Direct,Seasonal Discount,177,Actual
+7/31/2015,Corporate,29525,30899,Email,New Product Launch,1374,Actual
+7/31/2015,Premium,43041,44461,Web,Seasonal Discount,1420,Actual
+7/31/2015,Standard,414092,415617,Web,New Product Launch,1525,Actual
+7/31/2015,Corporate,15921,17676,Web,Non Discount Promotion,1755,Actual
+6/30/2015,Premium,172525,171829,Email,Seasonal Discount,-696,Actual
+6/30/2015,Standard,49519,49947,Direct,New Product Launch,428,Actual
+6/30/2015,Corporate,346003,346653,Web,Seasonal Discount,650,Actual
+6/30/2015,Premium,35527,37061,Web,New Product Launch,1534,Actual
+6/30/2015,Standard,33897,35190,Web,New Product Launch,1293,Actual
+6/30/2015,Corporate,427011,426858,Email,Non Discount Promotion,-153,Actual
+5/31/2015,Premium,9134,10712,Direct,Non Discount Promotion,1578,Actual
+5/31/2015,Standard,53655,55182,Direct,Non Discount Promotion,1527,Actual
+5/31/2015,Corporate,126600,126527,Email,Seasonal Discount,-73,Actual
+5/31/2015,Premium,50096,51407,Direct,Seasonal Discount,1311,Actual
+5/31/2015,Standard,350745,351617,Direct,Non Discount Promotion,872,Actual
+5/31/2015,Corporate,357344,358653,Web,Non Discount Promotion,1309,Actual
+4/30/2015,Premium,26326,25558,Email,Seasonal Discount,-768,Actual
+4/30/2015,Standard,15281,16883,Web,New Product Launch,1602,Actual
+4/30/2015,Corporate,420403,419624,Email,New Product Launch,-779,Actual
+4/30/2015,Premium,57278,58037,Email,New Product Launch,759,Actual
+4/30/2015,Standard,413988,414734,Direct,New Product Launch,746,Actual
+4/30/2015,Corporate,37132,38746,Web,Seasonal Discount,1614,Actual
+3/31/2015,Premium,160524,161729,Direct,Non Discount Promotion,1205,Actual
+3/31/2015,Standard,11792,13212,Direct,Non Discount Promotion,1420,Actual
+3/31/2015,Corporate,426807,428497,Web,New Product Launch,1690,Actual
+3/31/2015,Premium,44548,46030,Web,New Product Launch,1482,Actual
+3/31/2015,Standard,230846,231415,Web,New Product Launch,569,Actual
+3/31/2015,Corporate,352451,352694,Email,New Product Launch,243,Actual
+2/28/2015,Premium,49302,49963,Web,New Product Launch,661,Actual
+2/28/2015,Standard,31993,33423,Web,Seasonal Discount,1430,Actual
+2/28/2015,Corporate,34344,35362,Web,Seasonal Discount,1018,Actual
+2/28/2015,Premium,54532,55237,Email,Non Discount Promotion,705,Actual
+2/28/2015,Standard,319393,319450,Email,Seasonal Discount,57,Actual
+2/28/2015,Corporate,14549,16036,Web,Seasonal Discount,1487,Actual
+1/31/2015,Premium,7129,8841,Web,New Product Launch,1712,Actual
+1/31/2015,Standard,446374,446241,Email,Non Discount Promotion,-133,Actual
+1/31/2015,Corporate,431162,431415,Email,Seasonal Discount,253,Actual
+1/31/2015,Premium,239776,241516,Direct,New Product Launch,1740,Actual
+1/31/2015,Standard,10085,11777,Direct,New Product Launch,1692,Actual
+1/31/2015,Corporate,9459,10772,Direct,Non Discount Promotion,1313,Actual
+12/31/2014,Premium,5365,6180,Web,New Product Launch,815,Actual
+12/31/2014,Standard,337085,337825,Direct,New Product Launch,740,Actual
+12/31/2014,Corporate,333192,334217,Direct,Non Discount Promotion,1025,Actual
+12/31/2014,Premium,39621,41364,Web,Non Discount Promotion,1743,Actual
+12/31/2014,Standard,46459,46683,Web,Non Discount Promotion,224,Actual
+12/31/2014,Corporate,36281,36562,Web,Seasonal Discount,281,Actual
+11/30/2014,Premium,25281,26517,Direct,Seasonal Discount,1236,Actual
+11/30/2014,Standard,431616,431485,Email,New Product Launch,-131,Actual
+11/30/2014,Corporate,53154,54089,Web,Non Discount Promotion,935,Actual
+11/30/2014,Premium,48728,49094,Direct,Non Discount Promotion,366,Actual
+11/30/2014,Standard,7389,7658,Direct,Seasonal Discount,269,Actual
+11/30/2014,Corporate,38045,38518,Direct,Seasonal Discount,473,Actual
+10/31/2014,Premium,49827,51627,Direct,Non Discount Promotion,1800,Actual
+10/31/2014,Standard,440401,441927,Direct,New Product Launch,1526,Actual
+10/31/2014,Corporate,46263,46754,Direct,Non Discount Promotion,491,Actual
+10/31/2014,Premium,40608,42365,Web,Non Discount Promotion,1757,Actual
+10/31/2014,Standard,54027,54549,Web,New Product Launch,522,Actual
+10/31/2014,Corporate,44387,44723,Direct,Non Discount Promotion,336,Actual
+9/30/2014,Premium,52725,53231,Email,Non Discount Promotion,506,Actual
+9/30/2014,Standard,37329,37657,Web,Non Discount Promotion,328,Actual
+9/30/2014,Corporate,445142,445249,Direct,Non Discount Promotion,107,Actual
+9/30/2014,Premium,9281,9919,Direct,Seasonal Discount,638,Actual
+9/30/2014,Standard,31731,32164,Email,Non Discount Promotion,433,Actual
+9/30/2014,Corporate,34756,35055,Web,Seasonal Discount,299,Actual
+8/31/2014,Premium,38200,38479,Email,Non Discount Promotion,279,Actual
+8/31/2014,Standard,240861,241516,Email,Seasonal Discount,655,Actual
+8/31/2014,Corporate,47236,47910,Web,Seasonal Discount,674,Actual
+8/31/2014,Premium,43819,44261,Email,Non Discount Promotion,442,Actual
+8/31/2014,Standard,17987,18840,Web,Seasonal Discount,853,Actual
+8/31/2014,Corporate,150073,151625,Direct,New Product Launch,1552,Actual
+7/31/2014,Premium,30132,30648,Direct,Seasonal Discount,516,Actual
+7/31/2014,Standard,219629,221054,Direct,New Product Launch,1425,Actual
+7/31/2014,Corporate,256532,258132,Web,Seasonal Discount,1600,Actual
+7/31/2014,Premium,49715,50349,Direct,Seasonal Discount,634,Actual
+7/31/2014,Standard,21740,22662,Direct,New Product Launch,922,Actual
+7/31/2014,Corporate,43855,45102,Direct,New Product Launch,1247,Actual
+6/30/2014,Premium,46121,46777,Direct,New Product Launch,656,Actual
+6/30/2014,Standard,241828,241516,Email,Non Discount Promotion,-312,Actual
+6/30/2014,Corporate,44073,43163,Email,Seasonal Discount,-910,Actual
+6/30/2014,Premium,26268,27367,Web,New Product Launch,1099,Actual
+6/30/2014,Standard,161876,162516,Direct,Non Discount Promotion,640,Actual
+6/30/2014,Corporate,13252,13751,Direct,New Product Launch,499,Actual
+5/31/2014,Premium,47281,48986,Direct,Seasonal Discount,1705,Actual
+5/31/2014,Standard,149352,148690,Email,Non Discount Promotion,-662,Actual
+5/31/2014,Corporate,35258,34613,Email,Non Discount Promotion,-645,Actual
+5/31/2014,Premium,17674,18476,Direct,Seasonal Discount,802,Actual
+5/31/2014,Standard,32326,32746,Direct,Non Discount Promotion,420,Actual
+5/31/2014,Corporate,21600,22398,Email,Non Discount Promotion,798,Actual
+4/30/2014,Premium,48101,48868,Direct,Non Discount Promotion,767,Actual
+4/30/2014,Standard,161099,161516,Email,Non Discount Promotion,417,Actual
+4/30/2014,Corporate,34992,34751,Email,Non Discount Promotion,-241,Actual
+4/30/2014,Premium,35882,35034,Email,Non Discount Promotion,-848,Actual
+4/30/2014,Standard,27760,29131,Web,Non Discount Promotion,1371,Actual
+4/30/2014,Corporate,40866,41193,Web,Non Discount Promotion,327,Actual
+3/31/2014,Premium,34032,34572,Direct,Seasonal Discount,540,Actual
+3/31/2014,Standard,349926,350100,Web,Seasonal Discount,174,Actual
+3/31/2014,Corporate,48370,49418,Web,New Product Launch,1048,Actual
+3/31/2014,Premium,260876,261514,Web,Seasonal Discount,638,Actual
+3/31/2014,Standard,50446,51880,Web,Non Discount Promotion,1434,Actual
+3/31/2014,Corporate,19460,19261,Email,Non Discount Promotion,-199,Actual
+2/28/2014,Premium,50073,51340,Web,Non Discount Promotion,1267,Actual
+2/28/2014,Standard,340195,339779,Email,New Product Launch,-416,Actual
+2/28/2014,Corporate,42603,41537,Email,New Product Launch,-1066,Actual
+2/28/2014,Premium,35931,36156,Email,New Product Launch,225,Actual
+2/28/2014,Standard,10617,12357,Direct,New Product Launch,1740,Actual
+2/28/2014,Corporate,34259,34868,Email,Seasonal Discount,609,Actual
+1/31/2014,Premium,26352,25795,Email,Non Discount Promotion,-557,Actual
+1/31/2014,Standard,228603,229101,Direct,New Product Launch,498,Actual
+1/31/2014,Corporate,250797,251415,Direct,Non Discount Promotion,618,Actual
+1/31/2014,Premium,29791,29943,Direct,Non Discount Promotion,152,Actual
+1/31/2014,Standard,10083,11513,Web,Seasonal Discount,1430,Actual
+1/31/2014,Corporate,35579,36116,Email,New Product Launch,537,Actual
+12/31/2013,Premium,60108,59515,Email,Non Discount Promotion,-593,Actual
+12/31/2013,Standard,51509,52342,Email,Seasonal Discount,833,Actual
+12/31/2013,Corporate,54993,56665,Direct,New Product Launch,1672,Actual
+11/30/2013,Premium,24158,25618,Direct,Seasonal Discount,1460,Actual
+11/30/2013,Standard,14493,15720,Web,New Product Launch,1227,Actual
+11/30/2013,Corporate,126749,127716,Direct,Non Discount Promotion,967,Actual
+10/31/2013,Premium,16444,16986,Direct,Seasonal Discount,542,Actual
+10/31/2013,Standard,51500,52099,Email,New Product Launch,599,Actual
+10/31/2013,Corporate,152359,152625,Email,New Product Launch,266,Actual
+9/30/2013,Premium,31648,33336,Web,Seasonal Discount,1688,Actual
+9/30/2013,Standard,33095,33290,Web,Non Discount Promotion,195,Actual
+9/30/2013,Corporate,59196,59750,Direct,Non Discount Promotion,554,Actual
+8/31/2013,Premium,7487,7525,Direct,Seasonal Discount,38,Actual
+8/31/2013,Standard,58373,59081,Web,New Product Launch,708,Actual
+8/31/2013,Corporate,28906,27974,Email,Seasonal Discount,-932,Actual
+7/31/2013,Premium,15942,16990,Direct,Non Discount Promotion,1048,Actual
+7/31/2013,Standard,57979,58248,Web,Non Discount Promotion,269,Actual
+7/31/2013,Corporate,57608,58043,Web,Seasonal Discount,435,Actual
+6/30/2013,Premium,43639,44936,Direct,New Product Launch,1297,Actual
+6/30/2013,Standard,23947,24702,Email,New Product Launch,755,Actual
+6/30/2013,Corporate,16274,16867,Email,New Product Launch,593,Actual
+5/31/2013,Premium,169034,170283,Direct,New Product Launch,1249,Actual
+5/31/2013,Standard,8853,9952,Web,Seasonal Discount,1099,Actual
+5/31/2013,Corporate,224913,225265,Web,Seasonal Discount,352,Actual
+4/30/2013,Premium,77760,78283,Web,New Product Launch,523,Actual
+4/30/2013,Standard,7445,6427,Email,Non Discount Promotion,-1018,Actual
+4/30/2013,Corporate,226986,228385,Web,Non Discount Promotion,1399,Actual
+3/31/2013,Premium,135012,136046,Direct,Seasonal Discount,1034,Actual
+3/31/2013,Standard,13544,13660,Email,Seasonal Discount,116,Actual
+3/31/2013,Corporate,88852,88946,Web,Non Discount Promotion,94,Actual
+2/28/2013,Premium,133436,134212,Direct,New Product Launch,776,Actual
+2/28/2013,Standard,335,814,Web,Seasonal Discount,479,Actual
+2/28/2013,Corporate,194334,195404,Direct,Non Discount Promotion,1070,Actual
+1/31/2013,Premium,59757,60117,Direct,Non Discount Promotion,360,Actual
+1/31/2013,Standard,1690,2591,Direct,Seasonal Discount,901,Actual
+1/31/2013,Corporate,164916,166493,Direct,New Product Launch,1577,Actual
+12/31/2012,Premium,73315,74049,Direct,Seasonal Discount,734,Actual
+12/31/2012,Standard,1765,2726,Web,New Product Launch,961,Actual
+12/31/2012,Corporate,55051,55982,Direct,Seasonal Discount,931,Actual
+11/30/2012,Premium,186995,187210,Direct,Seasonal Discount,215,Actual
+11/30/2012,Standard,8612,9833,Direct,Seasonal Discount,1221,Actual
+11/30/2012,Corporate,281815,282126,Web,Seasonal Discount,311,Actual
+10/31/2012,Premium,72991,73969,Direct,Non Discount Promotion,978,Actual
+10/31/2012,Standard,4937,5852,Direct,Seasonal Discount,915,Actual
+10/31/2012,Corporate,196559,198263,Direct,Seasonal Discount,1704,Actual
+9/30/2012,Premium,145525,145732,Email,Seasonal Discount,207,Actual
+9/30/2012,Standard,15194,15599,Web,New Product Launch,405,Actual
+9/30/2012,Corporate,105356,107049,Direct,New Product Launch,1693,Actual
+8/31/2012,Premium,193332,193628,Web,Seasonal Discount,296,Actual
+8/31/2012,Standard,11426,11763,Email,Non Discount Promotion,337,Actual
+8/31/2012,Corporate,222227,223763,Web,Seasonal Discount,1536,Actual
+7/31/2012,Premium,112764,113576,Email,Seasonal Discount,812,Actual
+7/31/2012,Standard,22122,23346,Web,New Product Launch,1224,Actual
+7/31/2012,Corporate,232371,231473,Email,Seasonal Discount,-898,Actual
+6/30/2012,Premium,132807,134185,Web,Seasonal Discount,1378,Actual
+6/30/2012,Standard,41622,41490,Email,Seasonal Discount,-132,Actual
+6/30/2012,Corporate,86414,86633,Email,Seasonal Discount,219,Actual
+5/31/2012,Premium,170049,170221,Web,Non Discount Promotion,172,Actual
+5/31/2012,Standard,122234,123037,Email,New Product Launch,803,Actual
+4/30/2012,Premium,68978,70536,Direct,Non Discount Promotion,1558,Actual
+4/30/2012,Standard,132595,132976,Email,New Product Launch,381,Actual
+3/31/2012,Premium,180915,179750,Email,New Product Launch,-1165,Actual
+3/31/2012,Standard,104935,106445,Direct,Seasonal Discount,1510,Actual
+2/28/2012,Premium,149960,151051,Web,Non Discount Promotion,1091,Actual
+2/28/2012,Standard,99393,100987,Direct,Seasonal Discount,1594,Actual
+1/31/2012,Premium,76097,76018,Email,Seasonal Discount,-79,Actual
+1/31/2012,Standard,109113,109940,Email,Seasonal Discount,827,Actual
+12/31/2011,Premium,109142,109834,Web,Non Discount Promotion,692,Actual
+12/31/2011,Standard,61178,61445,Web,Non Discount Promotion,267,Actual
+11/30/2011,Premium,184039,184286,Web,Seasonal Discount,247,Actual
+11/30/2011,Standard,106371,106139,Email,Seasonal Discount,-232,Actual
+10/31/2011,Premium,98358,98633,Web,New Product Launch,275,Actual
+10/31/2011,Standard,125099,125716,Email,New Product Launch,617,Actual
+9/30/2011,Premium,155309,155826,Direct,New Product Launch,517,Actual
+9/30/2011,Standard,86393,88091,Web,Non Discount Promotion,1698,Actual
+8/31/2011,Premium,207131,208229,Direct,Seasonal Discount,1098,Actual
+8/31/2011,Standard,113839,115037,Web,New Product Launch,1198,Actual
+7/31/2011,Premium,135222,136911,Web,New Product Launch,1689,Actual
+7/31/2011,Standard,123673,123467,Email,Seasonal Discount,-206,Actual
+6/30/2011,Premium,230269,230680,Direct,Non Discount Promotion,411,Actual
+6/30/2011,Standard,129649,130331,Direct,Seasonal Discount,682,Actual
+5/31/2011,Premium,9497,9291,Email,New Product Launch,-206,Actual
+5/31/2011,Standard,32169,32530,Direct,Non Discount Promotion,361,Actual
+4/30/2011,Premium,44634,46252,Web,Seasonal Discount,1618,Actual
+4/30/2011,Standard,39143,39713,Web,Non Discount Promotion,570,Actual
+3/31/2011,Premium,26912,27303,Web,Non Discount Promotion,391,Actual
+3/31/2011,Standard,61655,60520,Email,Non Discount Promotion,-1135,Actual
+2/28/2011,Premium,82595,83353,Direct,Non Discount Promotion,758,Actual
+2/28/2011,Standard,33979,34601,Direct,Seasonal Discount,622,Actual
+1/31/2011,Premium,35500,34690,Email,Non Discount Promotion,-810,Actual
+1/31/2011,Standard,32432,33076,Direct,Seasonal Discount,644,Actual
+12/31/2010,Premium,21883,22873,Direct,Seasonal Discount,990,Actual
+12/31/2010,Standard,35646,36230,Email,Seasonal Discount,584,Actual
+11/30/2010,Premium,73416,74565,Direct,New Product Launch,1149,Actual
+11/30/2010,Standard,41865,42194,Web,New Product Launch,329,Actual
+10/31/2010,Premium,47136,47998,Web,Non Discount Promotion,862,Actual
+10/31/2010,Standard,38934,39042,Direct,New Product Launch,108,Actual
+9/30/2010,Premium,46051,47266,Direct,Seasonal Discount,1215,Actual
+9/30/2010,Standard,52451,51787,Email,New Product Launch,-664,Actual
+8/31/2010,Premium,58787,58710,Email,New Product Launch,-77,Actual
+8/31/2010,Standard,18719,19205,Web,Non Discount Promotion,486,Actual
+7/31/2010,Premium,46606,47352,Web,Non Discount Promotion,746,Actual
+7/31/2010,Standard,21148,20188,Email,New Product Launch,-960,Actual
+6/30/2010,Premium,12487,13076,Web,Non Discount Promotion,589,Actual
+6/30/2010,Standard,37330,37470,Web,Seasonal Discount,140,Actual

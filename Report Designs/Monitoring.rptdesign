@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/BIRT Online Maps.RPTLIBRARY</property>
+            <property name="namespace">BIRT Online Maps</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="Data object" id="7">
+            <property name="datamartURL">Data Objects/Toronto Trip Data</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <data-sets>
+        <data-mart-data-set name="Data Set1" id="402">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">now</property>
+                    <expression name="expression" type="javascript">BirtDateTime.now()</expression>
+                    <property name="dataType">time</property>
+                </structure>
+                <structure>
+                    <property name="name">elapsedTime</property>
+                    <expression name="expression" type="javascript">//BirtDateTime.diffSecond(row["StartTime"],row["now"])&#13;
+1</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">elapsedTimeMSS</property>
+                    <expression name="expression" type="javascript">BirtDateTime.diffMinute(row["StartTime"],row["now"]) + ":" +&#13;
+BirtStr.right("0" + BirtMath.mod(row["elapsedTime"],60) , 2)</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">info</property>
+                    <expression name="expression" type="javascript">"&lt;div align='left'>" +&#13;
+"&lt;table style='width:100%'> " +&#13;
+"&lt;tr>" +&#13;
+"&lt;td colspan = '3' >&lt;b>Customer : " + row["CustomerName"] + "&lt;/b>&lt;/td>" +&#13;
+"&lt;td colspan = '2'>&lt;a href='http://web.skype.com' target='_blank'>Contact via Skype   -&lt;/a>&lt;a href='http://process.eimdemo.com:8080/home/system/app/processExperience/web/perform/items/000D3A11A65811E7E51E974BBAD850E1.1/000D3A11A65811E7E51EB063F99AD0E1/6550dfdcfc863508a5afbc5ceff0a9de/R2VyYWxkIEJhbm5pc2g%253D' target='_blank'>-    Launch Process&lt;/a>&lt;/td>" + &#13;
+"&lt;/tr>" +&#13;
+"&lt;tr>" +&#13;
+"&lt;td colspan = '3' >&lt;b>&lt;font color='#f7cb09'>Vehicle information&lt;/td>&lt;td colspan = '2' >&lt;/b>&lt;font color='#f7cb09'>Trip information&lt;/font>&lt;/b>&lt;/td>" +&#13;
+"&lt;/tr>" +&#13;
+"&lt;tr>" +&#13;
+"&lt;td>&lt;b>Car type : &lt;/b>&lt;/td>  " +&#13;
+"&lt;td>" +  row["CarType"]  + "&lt;/td>" +&#13;
+"&lt;td rowspan='3'>&lt;img src=  " + encodeURI("http://analytics.eimdemo.com/iportal/servlet/DownloadFile?name=/Applications/CityTaxi/Images/"+ row["VehicleID"] + ".jpg" + "&amp;showBanner=false")  + ">&lt;/td> " +&#13;
+"&lt;td>&lt;font color='#f7cb09'>Time Start: &lt;/font>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" +  row["StartTime"] +  "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;tr> " +&#13;
+"&lt;td>&lt;b>Vehicle : &lt;/b>&lt;/td>  " +&#13;
+"&lt;td> " + row["VehicleMake"] + "&lt;/td> " +&#13;
+"&lt;td>&lt;font color='#f7cb09'>GPS Start Lat/Lng) : &lt;/font>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" +  row["StartLocationLat"] + "/" + row["StartLocationLong"] + "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;tr> " +&#13;
+"&lt;td colspan = '3'>&lt;/td>" +&#13;
+"&lt;td>&lt;font color='#f7cb09'>Elapsed time : &lt;/font>&lt;/td> " +&#13;
+"&lt;td style='background-color: #FFFFAE'>" + row["elapsedTimeMSS"]  + "&lt;/td> " +&#13;
+"&lt;/tr> " +&#13;
+"&lt;/table> " +  &#13;
+"&lt;/div>"</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ElapsedTimePct</property>
+                    <expression name="expression" type="javascript">BirtDateTime.diffSecond(row["StartTime"],row["now"])/BirtDateTime.diffSecond(row["StartTime"],row["EndTime"])</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">CurrentLat</property>
+                    <expression name="expression" type="javascript">((row["EndLocationLat"]-row["StartLocationLat"])*row["ElapsedTimePct"]) + row["StartLocationLat"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">CurrentLong</property>
+                    <expression name="expression" type="javascript">((row["EndLocationLong"]-row["StartLocationLong"])*row["ElapsedTimePct"]) + row["StartLocationLong"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">VehicleID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">VehicleID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VehicleMake</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">VehicleMake</text-property>
+                    <text-property name="heading">VehicleMake</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">City</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">City</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">StartTime</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CarType</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CarType</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartLocationLat</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">StartLocationLat</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartLocationLong</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">StartLocationLong</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">StartLocationLong</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">StartLocationLong</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">elapsedTime</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">now</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">elapsedTimeMSS</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+                <structure>
+                    <property name="columnName">info</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+                <structure>
+                    <property name="columnName">EndTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EndTime</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">ElapsedTimePct</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">EndLocationLat</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">EndLocationLat</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">EndLocationLong</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">EndLocationLong</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CurrentLat</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CurrentLong</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">DriverName</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DriverName</text-property>
+                    <text-property name="heading">DriverName</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">lt</property>
+                    <expression name="expr" type="javascript">row["StartTime"]</expression>
+                    <simple-property-list name="value1">
+                        <value>row["now"]</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="operator">gt</property>
+                    <expression name="expr" type="javascript">row["EndTime"]</expression>
+                    <simple-property-list name="value1">
+                        <value>row["now"]</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CustomerName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DriverCat</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">VehicleID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">VehicleMake</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">City</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">StartTime</property>
+                        <property name="dataType">time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CarType</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">StartLocationLat</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">StartLocationLong</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">EndTime</property>
+                        <property name="dataType">time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">EndLocationLat</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">EndLocationLong</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">DriverName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">now</property>
+                        <property name="dataType">time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">elapsedTime</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">elapsedTimeMSS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">info</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">ElapsedTimePct</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">CurrentLat</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">CurrentLong</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data object</property>
+            <property name="dataObject">Data Model</property>
+            <list-property name="selectedColumns">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CustomerName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DriverCat</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">VehicleID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">VehicleMake</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">City</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">StartTime</property>
+                    <property name="dataType">time</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CarType</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">StartLocationLat</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">StartLocationLong</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">EndTime</property>
+                    <property name="dataType">time</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">EndLocationLat</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">EndLocationLong</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">DriverName</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </data-mart-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="backgroundColor">#1D1D1D</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="472">
+            <column id="473">
+                <property name="width">75%</property>
+            </column>
+            <column id="474"/>
+            <row id="475">
+                <cell id="476">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">3</property>
+                    <extended-item extensionName="HTMLControl" id="471">
+                        <method name="clientOnCreate"><![CDATA[// This example demonstrates how create the map and markers using Google Map JSAPI
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See inline comments for more details.
+ */
+
+var config = {
+	/*
+	 * The Google map key. You should provide your own key to use the Google Map
+	 * JSAPI.  "AIzaSyDzX_T8DLWjYpJrzok5nmpgnNjeLPwUV2E"
+	 */
+	googleMapKey : "",
+
+	/*
+	 * Provide the column binding names as shown below. If not all
+	 * column names are specified, the template will use the sample data instead.
+	 */
+
+	/* Specify the column name as it appears in the data set.
+	* Example: 
+	* 	latitudeColumn : "LATITUDE"
+	*/
+
+	/* the column name for marker latitude value */
+	latitudeColumn : "CurrentLat",
+	/* the column name for marker longitude value */
+	longitudeColumn : "CurrentLong",
+	/* the column name for marker label text */
+	markerLabelColumn : "info",
+	/* the column name for marker latitude value */
+	carType : "CarType",
+	/* the column name for marker latitude value */
+	customerName : "CustomerName",
+	/* specify the default center coornidates for the map */
+	mapCenter : {
+		/* the latitude for the center */
+		lat : 39.808536,
+		/* the longitude for the center */
+		lng : -101.953125
+	},
+	/* specify elapsed time for alert condition */
+	elapsedTime: "elapsedTime"
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+ 
+// The Google Map jsapi url. You may provide your own api key and callback
+// function name.
+var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?key="
+		+ config.googleMapKey + "&amp;sensor=false&amp;callback=initialize";
+
+// get the container id
+var id = this.getId();
+var map = null;
+var lastInfowindow = null;
+var customViz = this;
+customViz.setPrintTimeOut(5000);
+var data = this.getData();
+debugger;
+config.mapCenter.lat = data.rows[0][18];
+config.mapCenter.lng = data.rows[0][19];
+
+config.testMode = !data || !data.columns || data.columns.length == 0;
+
+function getMarkerData() {
+
+	if (config.testMode) {
+
+		// use sample data
+		return [ [ 36.169202, -115.140597, 'Las&amp;nbsp;Vegas' ],
+				[ 37.78008, -122.420168, 'San&amp;nbsp;Francisco' ],
+				[ 37.334807, -121.888128, 'San&amp;nbsp;Jose' ],
+				[ 32.71576, -117.163817, 'San&amp;nbsp;Diego' ],
+				[ 34.052238, -118.243344, 'Los&amp;nbsp;Angeles' ],
+				[ 40.713054, -74.007228, 'NYC' ],
+				[ 42.358894, -71.056742, 'Boston' ],
+				[ 39.951061, -75.16562, 'Philadelphia' ],
+				[ 41.308252, -72.924161, 'New&amp;nbsp;Haven' ],
+				[ 40.731507, -74.174388, 'Newark' ] ];
+	} else {
+
+		// use data bindings, make sure the column names in config is properly
+		// set
+		var data = customViz.getData();
+
+		if (!data || !data.rows || !data.columns) {
+			return [];
+		}
+
+		// gets the index for columns
+		var i1 = -1, i2 = -1, i3 = -1, i4 = -1, i5 = -1, i6 = -1;
+		for (var i = 0; i < data.columns.length; i++) {
+			if (data.columns[i] == config.latitudeColumn) {
+				i1 = i;
+			} else if (data.columns[i] == config.longitudeColumn) {
+				i2 = i;
+			} else if (data.columns[i] == config.markerLabelColumn) {
+				i3 = i;
+			} else if (data.columns[i] == config.carType) {
+				i4 = i;
+			} else if (data.columns[i] == config.customerName) {
+				i5 = i;
+			} else if (data.columns[i] == config.elapsedTime) {
+			    i6 = i;
+			}
+		}
+
+		if (i1 < 0 || i2 < 0 || i3 < 0 || i4 < 0 || i5 < 0 || i6 < 0) {
+			return [];
+		}
+
+		// populate marker data by column index
+		var markerData = [];
+		for (var i = 0; i < data.rows.length; i++) {
+			var row = data.rows[i];
+			markerData.push([ row[i1], row[i2], row[i3], row[i4], row[i5], row[i6] ]);
+		}
+
+		return markerData;
+	}
+}
+
+// load map jsapi
+function loadMap(scriptUrl) {
+
+	if (window.mapApiLoaded) {
+		return;
+	}
+
+	// mark the flag to prevent duplicate loading
+	window.mapApiLoaded = true;
+
+	// make sure we only load the jsapi once
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;
+	document.body.appendChild(script);
+}
+
+// create the map
+function createMap() {
+	var mapOptions = {
+		zoom : 12,
+		center : new google.maps.LatLng(config.mapCenter.lat,
+				config.mapCenter.lng),
+		scrollwheel : false,
+		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		navigationControlOptions : {
+			style : google.maps.NavigationControlStyle.SMALL,
+			position : google.maps.ControlPosition.TOP_RIGHT
+		}
+	};
+	map = new google.maps.Map(document.getElementById(id), mapOptions);
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
+	createMarker();
+	customViz.setDelegate(map);
+	// CreateMarker() calls google api that has untrackable async js call itself. 
+	// It is not safe to call setPrintReady() here rather we need a timer to control it.
+	window.setTimeout(function(){customViz.setPrintReady()} , 3000);
+}
+
+// create markers
+function createMarker() {
+	var data = getMarkerData();
+debugger;
+	if (!data || data.length == 0) {
+		return;
+	}
+    var host = "ussm-web2-w2k12.lab.opentext.com";
+
+	for (var i = 0; i < data.length; i++) {
+	    var myURL;
+	    var alertStatus = "";
+	    if (data[i][5] > 900 &amp;&amp; data[i][5] < 1000) alertStatus = "Alert2"; // Check elapsedTime for alert conditions
+	    else if (data[i][5] > 1000) alertStatus = "Alert1";
+    	myURL = encodeURI("http://" + host + ":8700/iportal/servlet/DownloadFile?name=/Applications/Main Stage Magellan Demo/images/Icons/" +  data[i][3] + alertStatus + ".png&amp;showBanner=false&amp;userid=administrator");
+		var image = {
+    		url: myURL,
+    		size: new google.maps.Size(54, 54),
+	    	origin: new google.maps.Point(0, 0),
+    		anchor: new google.maps.Point(0, 32),
+    		scaledSize: new google.maps.Size(54, 54)
+	    };
+	    var myInfo = data[i][2];    
+	   	myInfo = myInfo.replace("analytics.eimdemo.com",host + ":8700");
+	   	myInfo = myInfo.replace("CityTaxi","Main%20Stage%20Magellan%20Demo");
+    	var myInfoWindow = new google.maps.InfoWindow({
+    		content: myInfo,
+	    	maxHeight: 100
+    	});
+	    var myLatLng = new google.maps.LatLng(data[i][0], data[i][1]);
+    	var marker = new google.maps.Marker({
+        	position: myLatLng,
+	        map: map,
+    	    icon: image,
+        	title: data[i][4],
+	        infowindow : myInfoWindow
+    	});
+    	
+    google.maps.event.addListener(marker, 'click', function() {
+        if (this.infowindow.getMap() == null)  {
+        	map.setZoom(12);
+            map.setCenter(this.getPosition());
+            this.infowindow.open(map, this); 
+        }
+        else {
+            map.setZoom(12);
+            map.setCenter(new google.maps.LatLng(latCe, lngCe));
+            this.infowindow.close(map, this);
+        } 
+    });    
+    	
+		//createMarkerInfoWindow(marker, data[i][2]);
+	}
+}
+
+// create the popup info window for each marker
+function createMarkerInfoWindow(marker, info) {
+	var contentString = '<div><b>' + info + '</b></div>'
+	var infowindow = new google.maps.InfoWindow({
+		content : contentString
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		if (lastInfowindow != null) {
+			lastInfowindow.close();
+		}
+		infowindow.open(map, marker);
+		lastInfowindow = infowindow;
+	});
+}
+
+// check whether Google Map jsapi already loaded, duplicate loading may cause
+// issues.
+if (window.mapApiLoaded) {
+	// directly create the map
+	createMap();
+} else {
+
+	// due to the restriction of Google Map JSAPI, you must use a global
+	// callback function, here we use "initialize". change the name if there's
+	// any conflict
+	window.initialize = function() {
+		createMap();
+	};
+
+	// load jsapi and use callback to create the map
+	loadMap(googleMapScriptUrl);
+}
+]]></method>
+                        <property name="height">450px</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">Data Set1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CustomerName</property>
+                                <text-property name="displayName">CustomerName</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CustomerName"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DriverCat</property>
+                                <text-property name="displayName">DriverCat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["DriverCat"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VehicleID</property>
+                                <text-property name="displayName">VehicleID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["VehicleID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VehicleMake</property>
+                                <text-property name="displayName">VehicleMake</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["VehicleMake"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">City</property>
+                                <text-property name="displayName">City</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["City"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">StartTime</property>
+                                <text-property name="displayName">StartTime</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["StartTime"]</expression>
+                                <property name="dataType">time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CarType</property>
+                                <text-property name="displayName">CarType</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CarType"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">StartLocationLat</property>
+                                <text-property name="displayName">StartLocationLat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["StartLocationLat"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">StartLocationLong</property>
+                                <text-property name="displayName">StartLocationLong</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["StartLocationLong"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EndTime</property>
+                                <text-property name="displayName">EndTime</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["EndTime"]</expression>
+                                <property name="dataType">time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EndLocationLat</property>
+                                <text-property name="displayName">EndLocationLat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["EndLocationLat"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EndLocationLong</property>
+                                <text-property name="displayName">EndLocationLong</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["EndLocationLong"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DriverName</property>
+                                <text-property name="displayName">DriverName</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["DriverName"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">now</property>
+                                <text-property name="displayName">now</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["now"]</expression>
+                                <property name="dataType">time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">elapsedTime</property>
+                                <text-property name="displayName">elapsedTime</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["elapsedTime"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">elapsedTimeMSS</property>
+                                <text-property name="displayName">elapsedTimeMSS</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["elapsedTimeMSS"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">info</property>
+                                <text-property name="displayName">info</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["info"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ElapsedTimePct</property>
+                                <text-property name="displayName">ElapsedTimePct</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ElapsedTimePct"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CurrentLat</property>
+                                <text-property name="displayName">CurrentLat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CurrentLat"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CurrentLong</property>
+                                <text-property name="displayName">CurrentLong</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CurrentLong"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <property name="displayName">Google Map</property>
+                    </extended-item>
+                </cell>
+                <cell id="477">
+                    <grid id="1772">
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <column id="1773">
+                            <property name="textAlign">center</property>
+                        </column>
+                        <row id="1774">
+                            <cell id="1775">
+                                <label id="1782">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Engine on Time</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1776">
+                            <cell id="1777">
+                                <label id="1817">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Goal: below 240 minutes</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1778">
+                            <cell id="1779">
+                                <image id="1808">
+                                    <property name="marginBottom">0pt</property>
+                                    <property name="display">inline</property>
+                                    <property name="height">0.42696629213483145in</property>
+                                    <property name="width">0.3595505617977528in</property>
+                                    <property name="source">file</property>
+                                    <expression name="uri" type="constant">img/up.png</expression>
+                                </image>
+                                <label id="1811">
+                                    <property name="fontSize">36pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="color">green</property>
+                                    <property name="display">inline</property>
+                                    <text-property name="text">185.7</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1780">
+                            <cell id="1781">
+                                <label id="1805">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Increase vs. June 2016</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="478">
+                <cell id="480">
+                    <property name="paddingTop">10pt</property>
+                    <property name="paddingBottom">10pt</property>
+                    <grid id="1783">
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <column id="1784">
+                            <property name="textAlign">center</property>
+                        </column>
+                        <row id="1785">
+                            <cell id="1786">
+                                <label id="1787">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Miles Driven</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1788">
+                            <cell id="1789">
+                                <label id="1820">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Goal: above 100 miles</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1790">
+                            <cell id="1791">
+                                <image id="1821">
+                                    <property name="marginBottom">0pt</property>
+                                    <property name="display">inline</property>
+                                    <property name="height">0.42696629213483145in</property>
+                                    <property name="width">0.3595505617977528in</property>
+                                    <property name="source">file</property>
+                                    <expression name="uri" type="constant">img/down.png</expression>
+                                </image>
+                                <label id="1819">
+                                    <property name="fontSize">36pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="color">green</property>
+                                    <property name="display">inline</property>
+                                    <text-property name="text">102.5</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1792">
+                            <cell id="1793">
+                                <label id="1806">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Decrease vs. June 2016</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="481">
+                <cell id="483">
+                    <grid id="1794">
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <column id="1795">
+                            <property name="textAlign">center</property>
+                        </column>
+                        <row id="1796">
+                            <cell id="1797">
+                                <label id="1798">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">16pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Speed Alerts</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1799">
+                            <cell id="1800">
+                                <label id="1823">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Goal: below 4 alerts</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1801">
+                            <cell id="1802">
+                                <image id="1824">
+                                    <property name="marginBottom">0pt</property>
+                                    <property name="display">inline</property>
+                                    <property name="height">0.42696629213483145in</property>
+                                    <property name="width">0.3595505617977528in</property>
+                                    <property name="source">file</property>
+                                    <expression name="uri" type="constant">img/down.png</expression>
+                                </image>
+                                <label id="1822">
+                                    <property name="fontSize">36pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="color">red</property>
+                                    <property name="display">inline</property>
+                                    <text-property name="text">7.4</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="1803">
+                            <cell id="1804">
+                                <label id="1807">
+                                    <property name="fontFamily">"Segoe UI"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#F5F5F5</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="display">block</property>
+                                    <text-property name="text">Decrease vs. June 2016</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

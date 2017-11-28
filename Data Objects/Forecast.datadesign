@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="Forecast Data Source" id="2">
+            <property name="HOME">data/</property>
+            <property name="DELIMTYPE">COMMA</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">NO</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+        <data-mart-data-source name="Stations Data Source" id="3">
+            <property name="datamartURL">Data Objects/citibike-stations</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <data-sets>
+        <data-mart-data-set name="Stations" id="4">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">stationName</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">stationName</text-property>
+                    <text-property name="heading">stationName</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">latitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">latitude</text-property>
+                    <text-property name="heading">latitude</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">longitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">longitude</text-property>
+                    <text-property name="heading">longitude</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">stationName</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">latitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">longitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Stations Data Source</property>
+            <property name="dataObject">Stations</property>
+            <list-property name="selectedColumns">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">stationName</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">latitude</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">longitude</property>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+        </data-mart-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Forecast" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">start_st</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">start_st</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">weekday</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">weekday</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">date</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">demand</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">demand</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">demand_int</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">demand_int</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">start_st</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">weekday</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">demand</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">demand_int</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Forecast Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">start_st</property>
+                    <property name="nativeName">start_st</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">weekday</property>
+                    <property name="nativeName">weekday</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">date</property>
+                    <property name="nativeName">date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">demand</property>
+                    <property name="nativeName">demand</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">demand_int</property>
+                    <property name="nativeName">demand_int</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "start_st", "weekday", "date", "demand", "demand_int" from "demandByDock.csv" : {"start_st","start_st",INT;"weekday","weekday",INT;"date","date",DATE;"demand","demand",DOUBLE;"demand_int","demand_int",INT}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>start_st</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>start_st</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>weekday</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>weekday</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>date</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>date</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>demand</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>demand</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>demand_int</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>demand_int</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <property name="linkedDataModels">
+        <linked-data-model name="Data Model" id="6">
+            <property name="aliasDataSets">
+                <alias-data-set name="Stations" id="19">
+                    <property name="originDataSet">Stations</property>
+                </alias-data-set>
+                <alias-data-set name="Forecast" id="20">
+                    <property name="originDataSet">Forecast</property>
+                </alias-data-set>
+            </property>
+            <property name="columnLinks">
+                <column-link id="21">
+                    <property name="leftAliasDataSet">Data Model/Stations</property>
+                    <property name="rightAliasDataSet">Data Model/Forecast</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="22">
+                            <structure name="leftColumn">
+                                <property name="position">2</property>
+                                <property name="name">id</property>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">start_st</property>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+            </property>
+            <property name="categories">
+                <category name="Stations" id="7">
+                    <property name="categoryColumns">
+                        <category-column name="id" id="9">
+                            <property name="aliasDataSet">Data Model/Stations</property>
+                            <property name="resultSetColumnName">id</property>
+                        </category-column>
+                        <category-column name="stationName" id="10">
+                            <property name="aliasDataSet">Data Model/Stations</property>
+                            <property name="resultSetColumnName">stationName</property>
+                        </category-column>
+                        <category-column name="latitude" id="11">
+                            <property name="aliasDataSet">Data Model/Stations</property>
+                            <property name="resultSetColumnName">latitude</property>
+                        </category-column>
+                        <category-column name="longitude" id="12">
+                            <property name="aliasDataSet">Data Model/Stations</property>
+                            <property name="resultSetColumnName">longitude</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="Forecast" id="13">
+                    <property name="categoryColumns">
+                        <category-column name="start_st" id="14">
+                            <property name="aliasDataSet">Data Model/Forecast</property>
+                            <property name="resultSetColumnName">start_st</property>
+                        </category-column>
+                        <category-column name="weekday" id="15">
+                            <property name="aliasDataSet">Data Model/Forecast</property>
+                            <property name="resultSetColumnName">weekday</property>
+                        </category-column>
+                        <category-column name="date" id="16">
+                            <property name="aliasDataSet">Data Model/Forecast</property>
+                            <property name="resultSetColumnName">date</property>
+                        </category-column>
+                        <category-column name="demand" id="17">
+                            <property name="aliasDataSet">Data Model/Forecast</property>
+                            <property name="resultSetColumnName">demand</property>
+                        </category-column>
+                        <category-column name="demand_int" id="18">
+                            <property name="aliasDataSet">Data Model/Forecast</property>
+                            <property name="resultSetColumnName">demand_int</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+            <property name="pushDown">true</property>
+        </linked-data-model>
+    </property>
+</datamart>

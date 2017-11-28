@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="Forecast Data Source" id="4">
+            <property name="datamartURL">Data Objects/Forecast</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Data Model" id="5">
+            <property name="dataSource">Forecast Data Source</property>
+            <property name="dataObject">Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="Forecast Table" id="24">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">__ac_group_collapse_level</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="display">block</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">stationName</property>
+                    <text-property name="displayName">stationName</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["stationName"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">latitude</property>
+                    <text-property name="displayName">latitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["latitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">longitude</property>
+                    <text-property name="displayName">longitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["longitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">demand</property>
+                    <text-property name="displayName">demand</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["demand"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">lat</property>
+                    <expression name="expression" type="javascript">row["latitude"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">lon</property>
+                    <expression name="expression" type="javascript">row["longitude"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">max demand</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">MAX</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["demand"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">min demand</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">MIN</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["demand"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">Data Model</property>
+            <property name="isSummaryTable">true</property>
+            <column id="42"/>
+            <column id="43"/>
+            <column id="44"/>
+            <column id="45"/>
+            <column id="46"/>
+            <column id="95"/>
+            <column id="98"/>
+            <header>
+                <row id="25">
+                    <cell id="26">
+                        <label id="27">
+                            <text-property name="text">id</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="29">
+                            <text-property name="text">stationName</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="31">
+                            <text-property name="text">latitude</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <label id="33">
+                            <text-property name="text">longitude</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <label id="35">
+                            <text-property name="text">demand</text-property>
+                        </label>
+                    </cell>
+                    <cell id="93">
+                        <label id="102">
+                            <text-property name="text">max</text-property>
+                        </label>
+                    </cell>
+                    <cell id="96">
+                        <label id="101">
+                            <text-property name="text">min</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="61">
+                <property name="groupName">NewTableGroup1</property>
+                <expression name="keyExpr" type="javascript">row["id"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["id"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["demand"]</expression>
+                        <property name="direction">desc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                </list-property>
+                <header>
+                    <row id="62">
+                        <cell id="63">
+                            <data id="74">
+                                <property name="resultSetColumn">id</property>
+                            </data>
+                        </cell>
+                        <cell id="64">
+                            <data id="79">
+                                <property name="resultSetColumn">stationName</property>
+                            </data>
+                        </cell>
+                        <cell id="65">
+                            <data id="90">
+                                <property name="resultSetColumn">lat</property>
+                            </data>
+                        </cell>
+                        <cell id="66">
+                            <data id="91">
+                                <property name="resultSetColumn">lon</property>
+                            </data>
+                        </cell>
+                        <cell id="67">
+                            <data id="92">
+                                <property name="resultSetColumn">demand</property>
+                            </data>
+                        </cell>
+                        <cell id="94">
+                            <data id="99">
+                                <property name="resultSetColumn">max demand</property>
+                            </data>
+                        </cell>
+                        <cell id="97">
+                            <data id="100">
+                                <property name="resultSetColumn">min demand</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+            </group>
+        </table>
+        <grid id="120">
+            <column id="121">
+                <property name="width">50%</property>
+            </column>
+            <column id="122">
+                <property name="width">50%</property>
+            </column>
+            <row id="123">
+                <property name="height">480px</property>
+                <cell id="124">
+                    <extended-item extensionName="HTMLControl" name="ForecastChart" id="105">
+                        <method name="clientOnCreate"><![CDATA[
+head.load("https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js");
+
+debugger;
+// This example demonstrates how create the map and markers using Google Map JSAPI
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See inline comments for more details.
+ */
+
+var config = {
+	/*
+	 * The Google map key. You should provide your own key to use the Google Map
+	 * JSAPI.
+	 */
+	googleMapKey : "AIzaSyC6dvAiI7p6TzLOlTKhhAtMpRG3QMv9cqA",
+
+	/* specify the default center coornidates for the map */
+	mapCenter : {
+		/* the latitude for the center */
+		lat : 40.7269248,
+		/* the longitude for the center */
+		lng : -73.983968
+	}
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+ 
+// The Google Map jsapi url. You may provide your own api key and callback
+// function name.
+var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?key="
+		+ config.googleMapKey + "&amp;sensor=false&amp;callback=initialize";
+
+// get the container id
+var id = this.getId();
+var map = null;
+var lastInfowindow = null;
+var customViz = this;
+customViz.setPrintTimeOut(5000);
+var data = this.getData();
+
+// Create marker array for use in MarkerClusterer object
+var markers = [];
+
+
+config.testMode = !data || !data.columns || data.columns.length == 0;
+
+// Add function to data object to find cell data by row id and column name
+function getEnhancedData() {
+	var data = customViz.getData();
+	if (!data || !data.rows || !data.columns) {
+		return [];
+	}
+
+	// Create column name -> column index map
+	data.colIndex={};
+	for (var i = 0; i < data.columns.length; i++) {
+		data.colIndex[data.columns[i]] = i;
+	}
+
+	data.getCell = function(r, c) {
+	    var row = this.rows[r];
+	    return row[ this.colIndex[c] ];
+	};
+	
+	data.length = data.rows.length;
+	
+	return data;
+}
+
+// load map jsapi
+function loadMap(scriptUrl) {
+
+	if (window.mapApiLoaded) {
+		return;
+	}
+
+	// mark the flag to prevent duplicate loading
+	window.mapApiLoaded = true;
+
+	// make sure we only load the jsapi once
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;
+	document.body.appendChild(script);
+}
+
+// create the map
+function createMap() {
+	var mapOptions = {
+		zoom : 14,
+		center : new google.maps.LatLng(config.mapCenter.lat,
+				config.mapCenter.lng),
+		scrollwheel : true,
+		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		navigationControlOptions : {
+			style : google.maps.NavigationControlStyle.SMALL,
+			position : google.maps.ControlPosition.TOP_RIGHT
+		}
+	};
+	map = new google.maps.Map(document.getElementById(id), mapOptions);
+	createMarker();
+	customViz.setDelegate(map);
+	
+	// Add marker cluster capability using the MarkerClusterer object
+	var mc = new MarkerClusterer(map, markers, { imagePath: 'https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m' });
+	
+	
+	// CreateMarker() calls google api that has untrackable async js call itself. 
+	// It is not safe to call setPrintReady() here rather we need a timer to control it.
+	//window.setTimeout(function(){customViz.setPrintReady()} , 3000);
+}
+
+// create markers
+function createMarker() {
+	var data = getEnhancedData();
+
+	if (!data || data.length == 0) {
+		return;
+	}
+
+	for (var i = 0; i < data.length; i++) {
+		var id = data.getCell(i, "id");
+		var lat = data.getCell(i, "lat");
+		var lng = data.getCell(i, "lon");
+		var avg = data.getCell(i, "demand");
+		var max = data.getCell(i, "max demand");
+		var min = data.getCell(i, "min demand");
+
+		
+		var markerText = data.getCell(i, "stationName") + "<br>Average Demand:" +
+		    avg  + 
+		    "<br>Max Demand:" + Math.round(max) + " &amp;nbsp;Min Demand: " 
+		    + Math.round(min);
+		
+		var marker = new google.maps.Marker({
+			map : map,
+			position : new google.maps.LatLng(lat, lng)
+		});
+
+		marker.id=id;
+		if ( avg > 20 )
+		    marker.setIcon('http://ussm-web2-w2k12.lab.opentext.com:8700/iportal/demo/car-orange-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+		else if (avg > 10)
+		    marker.setIcon('http://ussm-web2-w2k12.lab.opentext.com:8700/iportal/demo/car-green-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+		else
+		    marker.setIcon('http://ussm-web2-w2k12.lab.opentext.com:8700/iportal/demo/car-blue-32.png	');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+		
+		createMarkerInfoWindow(marker, markerText);
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			debugger;
+                var viewer = actuate.getViewer('ForecastTable');
+				var table = viewer.getTable('ForecastTable');
+				table.setFilters(new actuate.data.Filter("id", actuate.data.Filter.EQ, this.id));
+				table.submit();
+		});
+		
+		// Add marker to marker array for MarkerClusterer object
+		markers.push(marker);		
+		
+	}
+}
+
+// create the popup info window for each marker
+function createMarkerInfoWindow(marker, info) {
+	var contentString = '<div><b>' + info + '</b></div>'
+	var infowindow = new google.maps.InfoWindow({
+		content : contentString
+	});
+
+	google.maps.event.addListener(marker, 'mouseover', function() {
+		if (lastInfowindow != null) {
+			lastInfowindow.close();
+		}
+		infowindow.open(map, marker);
+		lastInfowindow = infowindow;
+	});
+}
+
+// check whether Google Map jsapi already loaded, duplicate loading may cause
+// issues.
+if (window.mapApiLoaded) {
+	// directly create the map
+	createMap();
+} else {
+
+	// due to the restriction of Google Map JSAPI, you must use a global
+	// callback function, here we use "initialize". change the name if there's
+	// any conflict
+	window.initialize = function() {
+		createMap();
+	};
+
+	// load jsapi and use callback to create the map
+	loadMap(googleMapScriptUrl);
+}
+]]></method>
+                        <property name="height">480px</property>
+                        <property name="width">100%</property>
+                        <property name="dataBindingRef">Forecast Table</property>
+                        <property name="displayName">Google Map</property>
+                    </extended-item>
+                </cell>
+                <cell id="125">
+                    <table name="ForecastTable" id="126">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <text-property name="displayName">id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">stationName</property>
+                                <text-property name="displayName">stationName</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["stationName"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">date</property>
+                                <text-property name="displayName">date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">demand</property>
+                                <text-property name="displayName">demand</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["demand"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <expression name="bookmark" type="javascript">"ForecastTable"</expression>
+                        <property name="linkedDataModel">Data Model</property>
+                        <list-property name="sort">
+                            <structure>
+                                <expression name="key" type="javascript">row["date"]</expression>
+                                <property name="direction">asc</property>
+                                <property name="strength">-1</property>
+                            </structure>
+                        </list-property>
+                        <column id="150"/>
+                        <header>
+                            <row id="154">
+                                <property name="height">480px</property>
+                                <cell id="155">
+                                    <property name="colSpan">1</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="backgroundColor">white</property>
+                                    <extended-item extensionName="Chart" id="159">
+                                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Line Chart" subType="Overlay">
+  <block>
+   <children _type="TitleBlock">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="28 Day Demand Forecast"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,366.75,183.375"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="01/05/2000,02/01/2000,04/12/2000,03/12/2000,02/29/2000"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="LineSeries" seriesIdentifier="Series 1" stacked="false">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;demand&quot;]">
+       <grouping/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="1"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                        <property name="outputFormat">JS</property>
+                                        <property name="inheritColumns">true</property>
+                                        <property name="height">480px</property>
+                                        <property name="width">100%</property>
+                                    </extended-item>
+                                </cell>
+                            </row>
+                        </header>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <property name="units">in</property>
+    <property name="theme">SampleApplication.Demo 2015</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/SampleApplication.rptlibrary</property>
+            <property name="namespace">SampleApplication</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="Forecast Data Source" id="4">
+            <property name="datamartURL">Data Objects/Forecast Toronto</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Data Model" id="268">
+            <property name="dataSource">Forecast Data Source</property>
+            <property name="dataObject">Data Model</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="Forecast Table" id="303">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">__ac_group_collapse_level</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Station ID</property>
+                    <text-property name="displayName">Station ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Station ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Station Name</property>
+                    <text-property name="displayName">Station Name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Station Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">lat</property>
+                    <text-property name="displayName">lat</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lat"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">lon</property>
+                    <text-property name="displayName">lon</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lon"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Demand</property>
+                    <text-property name="displayName">Demand</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["Demand"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">max demand</property>
+                    <text-property name="displayName">max demand</text-property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">MAX</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["Demand"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">min demand</property>
+                    <text-property name="displayName">min demand</text-property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">MIN</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["Demand"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">Data Model</property>
+            <property name="isSummaryTable">true</property>
+            <column id="321"/>
+            <column id="322"/>
+            <column id="323"/>
+            <column id="324"/>
+            <column id="325"/>
+            <column id="358"/>
+            <column id="361"/>
+            <header>
+                <row id="304">
+                    <cell id="305">
+                        <label id="306">
+                            <text-property name="text">station_id</text-property>
+                        </label>
+                    </cell>
+                    <cell id="307">
+                        <label id="308">
+                            <text-property name="text">name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="309">
+                        <label id="310">
+                            <text-property name="text">lat</text-property>
+                        </label>
+                    </cell>
+                    <cell id="311">
+                        <label id="312">
+                            <text-property name="text">lon</text-property>
+                        </label>
+                    </cell>
+                    <cell id="313">
+                        <label id="314">
+                            <text-property name="text">demand</text-property>
+                        </label>
+                    </cell>
+                    <cell id="356"/>
+                    <cell id="359"/>
+                </row>
+            </header>
+            <group id="326">
+                <property name="groupName">NewTableGroup1</property>
+                <expression name="keyExpr" type="javascript">row["Station ID"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["Station ID"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["Demand"]</expression>
+                        <property name="direction">desc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                </list-property>
+                <header>
+                    <row id="327">
+                        <cell id="328">
+                            <data id="339">
+                                <property name="resultSetColumn">Station ID</property>
+                            </data>
+                        </cell>
+                        <cell id="329">
+                            <data id="344">
+                                <property name="resultSetColumn">Station Name</property>
+                            </data>
+                        </cell>
+                        <cell id="330"/>
+                        <cell id="331"/>
+                        <cell id="332">
+                            <data id="354">
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Demand</property>
+                            </data>
+                        </cell>
+                        <cell id="357">
+                            <data id="364">
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">max demand</property>
+                            </data>
+                        </cell>
+                        <cell id="360">
+                            <data id="365">
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">min demand</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+            </group>
+        </table>
+        <grid id="120">
+            <expression name="bookmark" type="javascript">"Map"</expression>
+            <column id="121">
+                <property name="width">50%</property>
+            </column>
+            <row id="123">
+                <property name="height">600px</property>
+                <cell id="124">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <extended-item extensionName="HTMLControl" name="ForecastChart" id="105">
+                        <method name="clientOnCreate"><![CDATA[
+head.load("https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js");
+
+debugger;
+// This example demonstrates how create the map and markers using Google Map JSAPI
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See inline comments for more details.
+ */
+
+var config = {
+	/*
+	 * The Google map key. You should provide your own key to use the Google Map
+	 * JSAPI. This is Mica Block's developer key.
+	 */
+	googleMapKey : "AIzaSyDi-A-jkIkioXs40iP63CP1Y_A9Es7De1A",
+
+	/* specify the default center coornidates for the map */
+	mapCenter : {
+		/* the latitude for the center */
+		lat : 43.65781,
+		/* the longitude for the center */
+		lng : -79.39079
+	}
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+ 
+// The Google Map jsapi url. You may provide your own api key and callback
+// function name.
+var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?key="
+		+ config.googleMapKey + "&amp;sensor=false&amp;callback=initialize";
+
+// get the container id
+var id = this.getId();
+var map = null;
+var lastInfowindow = null;
+var customViz = this;
+customViz.setPrintTimeOut(5000);
+var data = this.getData();
+
+// Create marker array for use in MarkerClusterer object
+var markers = [];
+
+
+config.testMode = !data || !data.columns || data.columns.length == 0;
+
+// Add function to data object to find cell data by row id and column name
+function getEnhancedData() {
+	var data = customViz.getData();
+	if (!data || !data.rows || !data.columns) {
+		return [];
+	}
+
+	// Create column name -> column index map
+	data.colIndex={};
+	for (var i = 0; i < data.columns.length; i++) {
+		data.colIndex[data.columns[i]] = i;
+	}
+
+	data.getCell = function(r, c) {
+	    var row = this.rows[r];
+	    return row[ this.colIndex[c] ];
+	};
+	
+	data.length = data.rows.length;
+	
+	return data;
+}
+
+// load map jsapi
+function loadMap(scriptUrl) {
+
+	if (window.mapApiLoaded) {
+		return;
+	}
+
+	// mark the flag to prevent duplicate loading
+	window.mapApiLoaded = true;
+
+	// make sure we only load the jsapi once
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;
+	document.body.appendChild(script);
+}
+
+// create the map
+function createMap() {
+	var mapOptions = {
+		zoom : 14,
+		center : new google.maps.LatLng(config.mapCenter.lat,
+				config.mapCenter.lng),
+		scrollwheel : true,
+		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		navigationControlOptions : {
+			style : google.maps.NavigationControlStyle.SMALL,
+			position : google.maps.ControlPosition.TOP_RIGHT
+		}
+	};
+	map = new google.maps.Map(document.getElementById(id), mapOptions);
+	createMarker();
+	customViz.setDelegate(map);
+	
+	// Add marker cluster capability using the MarkerClusterer object
+	var mc = new MarkerClusterer(map, markers, { imagePath: 'https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m' });
+	
+	
+	// CreateMarker() calls google api that has untrackable async js call itself. 
+	// It is not safe to call setPrintReady() here rather we need a timer to control it.
+	//window.setTimeout(function(){customViz.setPrintReady()} , 3000);
+}
+
+// create markers
+function createMarker() {
+	debugger;
+	var data = getEnhancedData();
+
+	if (!data || data.length == 0) {
+		return;
+	}
+
+	for (var i = 0; i < data.length; i++) {
+		var id = data.getCell(i, "Station ID");
+		var lat = data.getCell(i, "lat");
+		var lng = data.getCell(i, "lon");
+		var demand = data.getCell(i, "Demand");
+		var max = data.getCell(i, "max demand");
+		var min = data.getCell(i, "min demand");
+
+		
+		var markerText = data.getCell(i, "Station Name") + "<br>Average Demand:" +
+		    demand  + 
+		    "<br>Max Demand:" + Math.round(max) + " &amp;nbsp;Min Demand: " 
+		    + Math.round(min);
+		
+		var marker = new google.maps.Marker({
+			map : map,
+			position : new google.maps.LatLng(lat, lng)
+		});
+
+		marker.id=id;
+		marker.name=data.getCell(i, "Station Name");
+		if ( demand > 125 )
+		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-orange-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+		else if (demand > 98)
+		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-green-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+		else
+		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-blue-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+		
+		createMarkerInfoWindow(marker, markerText);
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			debugger;
+                ApplyChartFilter(this.id,this.name);
+		});
+		
+		// Add marker to marker array for MarkerClusterer object
+		markers.push(marker);		
+		
+	}
+}
+
+// create the popup info window for each marker
+function createMarkerInfoWindow(marker, info) {
+	var contentString = '<div><b>' + info + '</b></div>'
+	var infowindow = new google.maps.InfoWindow({
+		content : contentString
+	});
+
+	google.maps.event.addListener(marker, 'mouseover', function() {
+		if (lastInfowindow != null) {
+			lastInfowindow.close();
+		}
+		infowindow.open(map, marker);
+		lastInfowindow = infowindow;
+	});
+}
+
+// check whether Google Map jsapi already loaded, duplicate loading may cause
+// issues.
+if (window.mapApiLoaded) {
+	// directly create the map
+	createMap();
+} else {
+
+	// due to the restriction of Google Map JSAPI, you must use a global
+	// callback function, here we use "initialize". change the name if there's
+	// any conflict
+	window.initialize = function() {
+		createMap();
+	};
+
+	// load jsapi and use callback to create the map
+	loadMap(googleMapScriptUrl);
+}
+]]></method>
+                        <property name="height">600px</property>
+                        <property name="width">100%</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <text-property name="displayName">id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">stationName</property>
+                                <text-property name="displayName">stationName</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["stationName"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">latitude</property>
+                                <text-property name="displayName">latitude</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["latitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">longitude</property>
+                                <text-property name="displayName">longitude</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["longitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">lat</property>
+                                <expression name="expression" type="javascript">row["latitude"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">lon</property>
+                                <expression name="expression" type="javascript">row["longitude"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="dataBindingRef">Forecast Table</property>
+                        <property name="displayName">Google Map</property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="Bikes BDO" id="64">
+            <property name="datamartURL">Data Objects/Toronto-bike-realtime</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Toronto Bikes" id="65">
+            <property name="dataSource">Bikes BDO</property>
+            <property name="dataObject">Toronto Bikes</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="39">
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">new Date()</expression>
+                    <property name="dataType">date-time</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="40"/>
+            <column id="51"/>
+            <column id="54"/>
+            <column id="57"/>
+            <row id="67">
+                <property name="verticalAlign">middle</property>
+                <cell id="68">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingBottom">5pt</property>
+                    <label id="72">
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">white</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Real Time Availability</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="41">
+                <property name="verticalAlign">middle</property>
+                <cell id="42">
+                    <property name="paddingBottom">5pt</property>
+                    <data id="46">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#F5F5F5</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Long Time</property>
+                            <property name="pattern">Long Time</property>
+                        </structure>
+                        <property name="display">inline</property>
+                        <property name="resultSetColumn">Column Binding</property>
+                    </data>
+                </cell>
+                <cell id="49">
+                    <property name="paddingBottom">5pt</property>
+                    <image id="58">
+                        <property name="display">inline</property>
+                        <property name="height">32px</property>
+                        <property name="width">32px</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="constant">http://ussm-mag-ihub02.lab.opentext.com:8700/iportal/demo/car-orange-32.png</expression>
+                    </image>
+                    <label id="59">
+                        <property name="backgroundColor">#FF8000</property>
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="marginLeft">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Low on cars</text-property>
+                    </label>
+                </cell>
+                <cell id="52">
+                    <property name="paddingBottom">5pt</property>
+                    <image id="60">
+                        <property name="display">inline</property>
+                        <property name="height">32px</property>
+                        <property name="width">32px</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="constant">http://ussm-mag-ihub02.lab.opentext.com:8700/iportal/demo/car-blue-32.png</expression>
+                    </image>
+                    <label id="61">
+                        <property name="backgroundColor">#0080FF</property>
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">white</property>
+                        <property name="marginLeft">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Low on space</text-property>
+                    </label>
+                </cell>
+                <cell id="55">
+                    <property name="paddingBottom">5pt</property>
+                    <image id="62">
+                        <property name="display">inline</property>
+                        <property name="height">32px</property>
+                        <property name="width">32px</property>
+                        <property name="source">url</property>
+                        <expression name="uri" type="constant">http://ussm-mag-ihub02.lab.opentext.com:8700/iportal/demo/car-green-32.png</expression>
+                    </image>
+                    <label id="63">
+                        <property name="backgroundColor">#009726</property>
+                        <property name="fontFamily">"Segoe UI"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">white</property>
+                        <property name="marginLeft">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Good availability</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="HTMLControl" id="17">
+            <method name="clientOnCreate"><![CDATA[head.load("https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js");
+
+// This example demonstrates how create the map and markers using Google Map JSAPI
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See inline comments for more details.
+ */
+
+var config = {
+	/*
+	 * The Google map key. You should provide your own key to use the Google Map
+	 * JSAPI. This key is Mica Block's developer key
+	 */
+	//googleMapKey : "AIzaSyC6dvAiI7p6TzLOlTKhhAtMpRG3QMv9cqA",
+	googleMapKey : "AIzaSyDi-A-jkIkioXs40iP63CP1Y_A9Es7De1A",
+
+	/* specify the default center coornidates for the map */
+	mapCenter : {
+		/* the latitude for the center */
+		lat : 43.652330724,
+		/* the longitude for the center */
+		lng : -79.388998444
+	}
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+ 
+// The Google Map jsapi url. You may provide your own api key and callback
+// function name.
+var googleMapScriptUrl = "https://maps.googleapis.com/maps/api/js?key="
+		+ config.googleMapKey + "&amp;sensor=false&amp;callback=initialize";
+
+// get the container id
+var id = this.getId();
+var map = null;
+var lastInfowindow = null;
+var customViz = this;
+customViz.setPrintTimeOut(5000);
+var data = this.getData();
+
+// Create marker array for use in MarkerClusterer object
+var markers = [];
+
+config.testMode = !data || !data.columns || data.columns.length == 0;
+
+// Add function to data object to find cell data by row id and column name
+function getEnhancedData() {
+	var data = customViz.getData();
+	if (!data || !data.rows || !data.columns) {
+		return [];
+	}
+
+	// Create column name -> column index map
+	data.colIndex={};
+	for (var i = 0; i < data.columns.length; i++) {
+		data.colIndex[data.columns[i]] = i;
+	}
+
+	data.getCell = function(r, c) {
+	    var row = this.rows[r];
+	    return row[ this.colIndex[c] ];
+	};
+	
+	data.length = data.rows.length;
+	
+	return data;
+}
+
+// load map jsapi
+function loadMap(scriptUrl) {
+
+	if (window.mapApiLoaded) {
+		return;
+	}
+
+	// mark the flag to prevent duplicate loading
+	window.mapApiLoaded = true;
+
+	// make sure we only load the jsapi once
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = scriptUrl;
+	document.body.appendChild(script);
+}
+
+// create the map
+function createMap() {
+	var mapOptions = {
+		zoom : 13,
+		center : new google.maps.LatLng(config.mapCenter.lat,
+				config.mapCenter.lng),
+		scrollwheel : true,
+		mapTypeId : google.maps.MapTypeId.ROADMAP,
+		navigationControlOptions : {
+			style : google.maps.NavigationControlStyle.SMALL,
+			position : google.maps.ControlPosition.TOP_RIGHT
+		}
+	};
+	map = new google.maps.Map(document.getElementById(id), mapOptions);
+	createMarker();
+	customViz.setDelegate(map);
+	
+	// Add marker cluster capability using the MarkerClusterer object
+	var mc = new MarkerClusterer(map, markers, { imagePath: 'https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m' });
+	
+	// CreateMarker() calls google api that has untrackable async js call itself. 
+	// It is not safe to call setPrintReady() here rather we need a timer to control it.
+//	window.setTimeout(function(){customViz.setPrintReady()} , 3000);
+}
+
+// create markers
+function createMarker() {
+	var data = getEnhancedData();
+
+	if (!data || data.length == 0) {
+		return;
+	}
+
+	for (var i = 0; i < data.length; i++) {
+		var id = data.getCell(i, "station_id"); 
+		var name = data.getCell(i, "name");
+		var lat = data.getCell(i, "lat");
+		var lng = data.getCell(i, "lon");
+		var bikes = data.getCell(i, "num_bikes_available");
+		var docks = data.getCell(i, "num_docks_available");
+		var totalDocks = data.getCell(i, "capacity");
+		var markerText = data.getCell(i, "name") + "<br>Cars:" +
+		    bikes + " &amp;nbsp;&amp;nbsp;Spaces:" + docks;
+		
+		var marker = new google.maps.Marker({
+			map : map,
+			position : new google.maps.LatLng(lat, lng)
+		});
+		
+		marker.id=id;
+		marker.name=name;
+		
+		var pct = bikes / totalDocks;
+		if ( pct > 0.8 )
+		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-blue-32.png');
+		    //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-.png');
+		else if (pct < 0.2)
+		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-orange-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');		    
+		else
+		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-green-32.png');
+//		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');		    
+		
+		createMarkerInfoWindow(marker, markerText);
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			debugger;
+                ApplyChartFilter(this.id,this.name);
+		});
+		
+		// Add marker to marker array for MarkerClusterer object
+		markers.push(marker);			
+	}
+}
+
+// create the popup info window for each marker
+function createMarkerInfoWindow(marker, info) {
+	var contentString = '<div><b>' + info + '</b></div>'
+	var infowindow = new google.maps.InfoWindow({
+		content : contentString
+	});
+
+	google.maps.event.addListener(marker, 'mouseover', function() {
+		if (lastInfowindow != null) {
+			lastInfowindow.close();
+		}
+		infowindow.open(map, marker);
+		lastInfowindow = infowindow;
+	});
+}
+
+// check whether Google Map jsapi already loaded, duplicate loading may cause
+// issues.
+if (window.mapApiLoaded) {
+	// directly create the map
+	createMap();
+} else {
+
+	// due to the restriction of Google Map JSAPI, you must use a global
+	// callback function, here we use "initialize". change the name if there's
+	// any conflict
+	window.initialize = function() {
+		createMap();
+	};
+
+	// load jsapi and use callback to create the map
+	loadMap(googleMapScriptUrl);
+}
+]]></method>
+            <property name="height">500px</property>
+            <property name="width">100%</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">station_id</property>
+                    <text-property name="displayName">station_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["station_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">name</property>
+                    <text-property name="displayName">name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">lat</property>
+                    <text-property name="displayName">lat</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lat"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">lon</property>
+                    <text-property name="displayName">lon</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["lon"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">capacity</property>
+                    <text-property name="displayName">capacity</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">num_bikes_available</property>
+                    <text-property name="displayName">num_bikes_available</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["num_bikes_available"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">num_docks_available</property>
+                    <text-property name="displayName">num_docks_available</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["num_docks_available"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">Toronto Bikes</property>
+            <property name="displayName">Google Map</property>
+        </extended-item>
+    </body>
+</report>

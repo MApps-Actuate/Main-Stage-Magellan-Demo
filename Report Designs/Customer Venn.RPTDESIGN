@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.eclipse.org/birt/2005/design" id="1" version="3.2.23"><property name="createdBy">Big Data Analytics</property><property name="units">in</property><method name="clientInitialize">delete define.amd; head.js("http://d3js.org/d3.v3.min.js","https://rawgit.com/benfred/venn.js/master/venn.js");</method><property name="iconFile">/templates/chart_listing.gif</property><property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.chartlisting</property><property name="bidiLayoutOrientation">ltr</property><property name="imageDPI">96</property><list-property name="libraries"><structure><property name="fileName">/ThemesReportItems3.rptlibrary</property><property name="namespace">ThemesReportItems3</property></structure></list-property><data-sources><oda-data-source id="40" name="Data Source" extensionID="com.actuate.data.oda.qelectron"><property name="version">16.2</property><property name="electronUrl">localhost:8110</property><property name="iHubConnection">No</property><property name="iHubUrl"/><property name="user">Mark</property><property name="password">idEAeGbyhi8PN6i95bMgEA==</property><property name="volume"/><property name="ssl">No</property><property name="repository">initial_fastdb</property></oda-data-source></data-sources><data-sets><oda-data-set id="41" name="Data Set" extensionID="com.actuate.data.oda.qelectron.dataSet"><xml-property xmlns="" name="queryText"><![CDATA[<analysis><type>1</type><def><venn><table><nameex>[Demo].[Customer]</nameex></table><domains><domainstore><operationwithprevious>AND</operationwithprevious><name>rootblock_1</name><label>MOST LIKELY FREQ USER EQ Y EQ Y</label><definition><simplequery><name>rootblock</name><operationwithprevious>AND</operationwithprevious><column>[Demo].[Campaign Predictions].[MOST LIKELY FREQ USER EQ Y]</column><operator>EQ</operator><value>Y</value></simplequery></definition></domainstore><domainstore><operationwithprevious>AND</operationwithprevious><name>rootblock_2</name><label>MOST LIKELY TO BUY PREMIER PLAN EQ Y EQ Y</label><definition><simplequery><name>rootblock</name><operationwithprevious>AND</operationwithprevious><column>[Demo].[Campaign Predictions].[MOST LIKELY TO BUY PREMIER PLAN EQ Y]</column><operator>EQ</operator><value>Y</value></simplequery></definition></domainstore><domainstore><operationwithprevious>AND</operationwithprevious><name>rootblock_3</name><label>MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y EQ Y</label><definition><simplequery><name>rootblock</name><operationwithprevious>AND</operationwithprevious><column>[Demo].[Campaign Predictions].[MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y]</column><operator>EQ</operator><value>Y</value></simplequery></definition></domainstore></domains><filter/><format>value</format><autocalculate>1</autocalculate></venn></def></analysis>]]></xml-property><list-property xmlns="" name="columnHints"><structure><property name="columnName">rootblock_1</property><property name="analysis">dimension</property><text-property name="displayName">MOST LIKELY FREQ USER EQ Y EQ Y</text-property><text-property name="heading">rootblock_1</text-property></structure><structure><property name="columnName">rootblock_2</property><property name="analysis">dimension</property><text-property name="displayName">MOST LIKELY TO BUY PREMIER PLAN EQ Y EQ Y</text-property><text-property name="heading">rootblock_2</text-property></structure><structure><property name="columnName">rootblock_3</property><property name="analysis">dimension</property><text-property name="displayName">MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y EQ Y</text-property><text-property name="heading">rootblock_3</text-property></structure><structure><property name="columnName">Count</property><property name="analysis">dimension</property><text-property name="displayName">Count</text-property><text-property name="heading">Count</text-property></structure></list-property><list-property xmlns="" name="parameters"/><structure xmlns="" name="cachedMetaData"><list-property name="resultSet"><structure><property name="position">1</property><property name="name">rootblock_1</property><property name="dataType">string</property></structure><structure><property name="position">2</property><property name="name">rootblock_2</property><property name="dataType">string</property></structure><structure><property name="position">3</property><property name="name">rootblock_3</property><property name="dataType">string</property></structure><structure><property name="position">4</property><property name="name">Count</property><property name="dataType">Integer</property></structure></list-property></structure><property xmlns="" name="dataSource">Data Source</property><list-property xmlns="" name="resultSet"><structure><property name="position">1</property><property name="name">rootblock_1</property><property name="nativeName">rootblock_1</property><property name="dataType">string</property><property name="nativeDataType">1</property></structure><structure><property name="position">2</property><property name="name">rootblock_2</property><property name="nativeName">rootblock_2</property><property name="dataType">string</property><property name="nativeDataType">1</property></structure><structure><property name="position">3</property><property name="name">rootblock_3</property><property name="nativeName">rootblock_3</property><property name="dataType">string</property><property name="nativeDataType">1</property></structure><structure><property name="position">4</property><property name="name">Count</property><property name="nativeName">Count</property><property name="dataType">Integer</property><property name="nativeDataType">4</property></structure></list-property></oda-data-set></data-sets><styles><style id="33" name="report"><property name="fontFamily">"Lato"</property><property name="fontSize">10pt</property></style><style id="200" name="title"><property name="fontWeight">bold</property><property name="fontFamily">"Lato"</property><property name="fontSize">16pt</property><property name="color">#0072AA</property></style><style id="204" name="header_cell"><property name="backgroundColor">#0072AA</property><property name="color">#FFFFFF</property><property name="paddingTop">2pt</property><property name="paddingLeft">5pt</property><property name="paddingBottom">2pt</property><property name="paddingRight">5pt</property><property name="textAlign">left</property><property name="fontFamily">Lato</property><property name="fontSize">12pt</property></style><style id="205" name="detail_cell"><property name="backgroundColor">#FFFFFF</property><property name="color">#333333</property><property name="paddingTop">2pt</property><property name="paddingLeft">5pt</property><property name="paddingBottom">2pt</property><property name="paddingRight">5pt</property><property name="textAlign">left</property><property name="fontFamily">Lato</property><property name="fontSize">10pt</property></style></styles><themes xmlns=""><report-item-theme id="303" name="opentextheme" type="Chart"><xml-property name="customValues"><![CDATA[<type>1</type><ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" unitSpacing="15.0">
+  <block>
+   <children _type="TitleBlock">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="theme.withoutaxes" value=""/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,0,114,170"/>
+      <entries _body=",255,242,88,106"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,128,255,128"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition=""/>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="LineSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="AreaSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="PieSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <title>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </title>
+     </series>
+     <series _type="DialSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dial>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+       <majorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </majorGrid>
+       <minorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </minorGrid>
+       <label>
+        <background _nil="1"/>
+        <outline>
+         <color _nil="1"/>
+        </outline>
+       </label>
+      </dial>
+      <needle>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+      </needle>
+     </series>
+     <series _type="ScatterSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="StockSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="BubbleSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <accLineAttributes>
+       <color _nil="1"/>
+      </accLineAttributes>
+     </series>
+     <series _type="DifferenceSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <negativeMarkers>
+       <outline/>
+      </negativeMarkers>
+      <negativeLineAttributes>
+       <color _nil="1"/>
+      </negativeLineAttributes>
+     </series>
+     <series _type="GanttSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <connectionLine>
+       <color _nil="1"/>
+      </connectionLine>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+      <decorationLabel>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </decorationLabel>
+     </series>
+     <series _type="RadarSeries" seriesIdentifier="">
+      <label>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </label>
+      <dataPoint/>
+      <marker>
+       <outline/>
+      </marker>
+      <lineAttributes/>
+      <webLineAttributes/>
+      <webLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </webLabel>
+      <catLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </catLabel>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <ancillaryAxes>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _type="NumberDataElement" value="0.0"/>
+    </origin>
+   </ancillaryAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,0,114,170"/>
+     <entries _body=",255,242,88,106"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,128,255,128"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition=""/>
+     <curveFitting _nil="1"/>
+    </series>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>]]></xml-property></report-item-theme></themes><page-setup><simple-master-page id="2" name="Simple MasterPage"><page-footer><text id="3"><property name="contentType">html</property><text-property name="content">&lt;value-of&gt;new Date()&lt;/value-of&gt;</text-property></text></page-footer></simple-master-page></page-setup><body><grid id="4"><property name="height">0.322in</property><property name="width">7.96875in</property><column id="5"><property name="width">7.96875in</property></column><row id="61"><property name="verticalAlign">text-bottom</property><property name="height">0.322in</property><cell id="71"><property name="verticalAlign">top</property><image id="81"><property name="paddingLeft">16pt</property><property name="paddingBottom">16pt</property><property name="source">embed</property><property name="imageName">ot_logo.png</property></image></cell></row><row id="6"><property name="verticalAlign">text-bottom</property><property name="height">0.322in</property><cell id="7"><property name="verticalAlign">top</property><label id="8"><property name="paddingLeft">16pt</property><property name="textAlign">left</property><property name="style">title</property><text-property name="text">Customer Venn</text-property></label></cell></row></grid><text xmlns="" id="450"><property name="contentType">html</property><property name="style">detail_cell</property><text-property name="content">&lt;div id="venntooltip" style="text-align:center;"&gt;&lt;/div&gt;</text-property></text><table xmlns="" id="500"><property name="display">none</property><property name="dataSet">Data Set</property><property name="theme">ThemesReportItems3.Modern Table</property><list-property name="boundDataColumns"><structure><property name="name">MOST LIKELY FREQ USER EQ Y EQ Y</property><property name="displayName">MOST LIKELY FREQ USER EQ Y EQ Y</property><expression type="javascript" name="expression">dataSetRow["rootblock_1"]</expression><property name="dataType">string</property></structure><structure><property name="name">MOST LIKELY TO BUY PREMIER PLAN EQ Y EQ Y</property><property name="displayName">MOST LIKELY TO BUY PREMIER PLAN EQ Y EQ Y</property><expression type="javascript" name="expression">dataSetRow["rootblock_2"]</expression><property name="dataType">string</property></structure><structure><property name="name">MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y EQ Y</property><property name="displayName">MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y EQ Y</property><expression type="javascript" name="expression">dataSetRow["rootblock_3"]</expression><property name="dataType">string</property></structure><structure><property name="name">Count</property><property name="displayName">Count</property><expression type="javascript" name="expression">dataSetRow["Count"]</expression><property name="dataType">Integer</property></structure></list-property><method name="onCreate">
+    // composing an array with all the domain names
+    var columnsName = []; 
+    var columnsCount = this.getRowData().getColumnCount();
+    var row = this.getRowData();
+    reportContext.setPersistentGlobalVariable("numColumns",columnsCount.toString());
+    
+    for (i=0; i &lt; columnsCount ;i++)
+    {
+     if (!row.getColumnName(i).equals("Count"))
+      columnsName.push(row.getColumnName(i));
+    }
+    reportContext.setPersistentGlobalVariable("columnsName",columnsName);
+   </method><column id="520"/><column id="521"/><detail><row id="550"><method name="onCreate">
+      /*  This method is called for each row in the table. The method checks the domains that take 
+       part in this row and creates a new area with the domains and count value.
+      */
+      row = this.getRowData();      
+      var sets = reportContext.getPersistentGlobalVariable("sets");
+      if (sets == null)
+       sets = "";
+
+      var names = reportContext.getPersistentGlobalVariable("columnsName");
+      var auxDomains="";
+      var size=0;
+      
+      for (i=0; i &lt; row.getColumnCount(); i++) {
+          if (row.getColumnName(i) == "Count")
+           size = row.getColumnValue(i);
+          else {          
+        if (row.getColumnValue(i) == "Yes") {        
+         if (auxDomains != "") {
+          auxDomains += ",";
+         }         
+         auxDomains += "'" + names[i].replace("'","\\'") + "'";                         
+        }
+       }
+      }
+
+      if (auxDomains != "") {
+       //creating the new set that contains included domains and the count
+       var newArea = "{sets : [" + auxDomains + "], size : " + size + "}";
+       
+       //adding new area to the set of areas
+       if (sets != "") {
+        sets += ",";
+       }      
+       sets += newArea;
+       
+       reportContext.setPersistentGlobalVariable("sets", sets);      
+      }
+      </method><cell id="523"/><cell id="524"/></row></detail></table><text xmlns="" id="600"><property name="contentType">html</property><text-property name="content">&lt;div id="vennchart" style="text-align:center;"&gt;&lt;/div&gt;</text-property></text><text xmlns="" id="602"><property name="contentType">html</property><text-property name="content">&lt;script&gt;
+    function showVenn () {   
+     var sets = [ &lt;value-of&gt;reportContext.getPersistentGlobalVariable("sets")&lt;/value-of&gt; ];
+     
+     //drawing the venn diagram
+     var chart = venn.VennDiagram();
+     var div = d3.select("#vennchart");
+     div.datum(sets).call(chart);
+     
+     // add a tooltip
+     var tooltip = d3.select("#venntooltip");
+     
+     // add listeners to all the groups to display tooltip on mouseover
+     div.selectAll("g")
+         .on("mouseover", function(d, i) {
+             // sort all the areas relative to the current item
+             venn.sortAreas(div, d);
+     
+             // Display a tooltip with the current size
+             tooltip.transition().duration(400).style("opacity", .9);
+             tooltip.text(d.size + " users");
+     
+             // highlight the current path
+             var selection = d3.select(this).transition("tooltip").duration(400);
+             selection.select("path")
+                 .style("stroke-width", 3)
+                 .style("fill-opacity", d.sets.length == 1 ? .4 : .1)
+                 .style("stroke-opacity", 1);
+         })
+     
+         .on("mousemove", function() {
+             tooltip.style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+         })
+     
+         .on("mouseout", function(d, i) {
+             tooltip.transition().duration(400).style("opacity", 0);
+             var selection = d3.select(this).transition("tooltip").duration(400);
+             selection.select("path")
+                 .style("stroke-width", 0)
+                 .style("fill-opacity", d.sets.length == 1 ? .25 : .0)
+                 .style("stroke-opacity", 0);
+         });          
+    };
+    
+    head.ready (
+     function () {
+      showVenn();
+     }
+    );
+
+   &lt;/script&gt;
+   </text-property></text><table xmlns="" id="42"><property name="marginLeft">16pt</property><property name="marginBottom">16pt</property><property name="marginRight">16pt</property><property name="canShrink">true</property><property name="dataSet">Data Set</property><property name="theme">ThemesReportItems3.Modern Table</property><list-property name="boundDataColumns"><structure><property name="name">rootblock_1</property><property name="displayName">MOST LIKELY FREQ USER EQ Y EQ Y</property><expression type="javascript" name="expression">dataSetRow["rootblock_1"]</expression><property name="dataType">string</property></structure><structure><property name="name">rootblock_2</property><property name="displayName">MOST LIKELY TO BUY PREMIER PLAN EQ Y EQ Y</property><expression type="javascript" name="expression">dataSetRow["rootblock_2"]</expression><property name="dataType">string</property></structure><structure><property name="name">rootblock_3</property><property name="displayName">MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y EQ Y</property><expression type="javascript" name="expression">dataSetRow["rootblock_3"]</expression><property name="dataType">string</property></structure><structure><property name="name">Count</property><property name="displayName">Count</property><expression type="javascript" name="expression">dataSetRow["Count"]</expression><property name="dataType">Integer</property></structure></list-property><column id="50"/><column id="52"/><column id="53"/><column id="54"/><header><row id="80"><cell id="81"><property name="style">header_cell</property><label id="82"><text-property name="text">MOST LIKELY FREQ USER EQ Y EQ Y</text-property></label></cell><cell id="83"><property name="style">header_cell</property><label id="84"><text-property name="text">MOST LIKELY TO BUY PREMIER PLAN EQ Y EQ Y</text-property></label></cell><cell id="85"><property name="style">header_cell</property><label id="86"><text-property name="text">MOST LIKLEY TO RESP TO EMAIL CAMPAIGN EQ Y EQ Y</text-property></label></cell><cell id="85"><property name="style">header_cell</property><label id="86"><text-property name="text">Count</text-property></label></cell></row></header><detail><row id="150"><cell id="151"><property name="style">detail_cell</property><data id="152"><property name="resultSetColumn">rootblock_1</property></data></cell><cell id="153"><property name="style">detail_cell</property><data id="154"><property name="resultSetColumn">rootblock_2</property></data></cell><cell id="155"><property name="style">detail_cell</property><data id="156"><property name="resultSetColumn">rootblock_3</property></data></cell><cell id="155"><property name="style">detail_cell</property><data id="156"><structure name="numberFormat"><property name="category">Custom</property><property name="pattern">###,##0</property></structure><property name="textAlign">right</property><property name="resultSetColumn">Count</property></data></cell></row></detail><footer><row id="200"><cell id="201"/><cell id="203"/><cell id="205"/><cell id="205"/></row></footer></table></body><list-property name="images"><structure><property name="name">ot_logo.png</property><property name="type">image/png</property><property name="data">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</property></structure></list-property></report>
