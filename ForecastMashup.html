@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
-		<script type="text/javascript" src="http://wl-dev-ihubhdp01.opentext.net:8700/iportal/jsapi"></script>
+		<script type="text/javascript" src="http://mag-app-ihub.eastus.cloudapp.azure.com:8700/iportal/jsapi"></script>
 		<script type="text/javascript" language="JavaScript">
 		var reqOps;
 		var reportfile;
@@ -11,7 +11,7 @@
 
 		function acload()
 		{
-			var iportalurl = "http://wl-dev-ihubhdp01.opentext.net:8700/iportal";
+			var iportalurl = "http://mag-app-ihub.eastus.cloudapp.azure.com:8700/iportal";
 			//var userlogin = "administrator";
 			//var userpassword = "";
 
@@ -19,10 +19,10 @@
 			
 			reqOps = new actuate.RequestOptions();
 			reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
-			reqOps.setIServerUrl("http://wl-dev-ihubhdp01.opentext.net:8000");
-			reqOps.setVolume("Magellan");
-			reqOps.setVolumeProfile("Magellan");
-			actuate.initialize(iportalurl, reqOps, "administrator", "", createViewer);
+			reqOps.setIServerUrl("http://mag-app-ihub.eastus.cloudapp.azure.com:8000");
+			reqOps.setVolume("Default Volume");
+			reqOps.setVolumeProfile("Default Volume");
+			actuate.initialize(iportalurl, reqOps, "aminton", "OpenText1", createViewer);
 		}
 	
 		function createViewer() {

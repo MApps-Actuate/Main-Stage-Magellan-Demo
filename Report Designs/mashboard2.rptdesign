@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201705222139</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
     <property name="units">in</property>
     <property name="theme">ThemesReportItems31.Modern</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -282,13 +282,13 @@ function createMarker() {
 		
 		var pct = bikes / totalDocks;
 		if ( pct > 0.8 )
-		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-blue-32.png');
+		    marker.setIcon('http://mag-app-ihub.eastus.cloudapp.azure.com:8700/iportal/demo/car-blue-32.png');
 		    //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-.png');
 		else if (pct < 0.2)
-		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-orange-32.png');
+		    marker.setIcon('http://mag-app-ihub.eastus.cloudapp.azure.com:8700/iportal/demo/car-orange-32.png');
 //		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');		    
 		else
-		    marker.setIcon('http://wl-dev-ihubhdp01.opentext.net:8700/iportal/demo/car-green-32.png');
+		    marker.setIcon('http://mag-app-ihub.eastus.cloudapp.azure.com:8700/iportal/demo/car-green-32.png');
 //		    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');		    
 		
 		createMarkerInfoWindow(marker, markerText);

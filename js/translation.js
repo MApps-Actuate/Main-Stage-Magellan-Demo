@@ -4,7 +4,7 @@
 // German user Thomas
 //
 	var actUserName = sessionStorage.actUserName;
-	if (!actUserName) actUserName = "Administrator";
+	if (!actUserName) actUserName = "aminton";
 
 	var host = location.host;
 	var parameters = location.pathname.split("/");
