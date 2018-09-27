@@ -721,8 +721,8 @@ debugger;
     		scaledSize: new google.maps.Size(54, 54)
 	    };
 	    var myInfo = data[i][2];    
-	   	myInfo = myInfo.replace("analytics.eimdemo.com",host + ":8700");
-	   	myInfo = myInfo.replace("CityTaxi","Main%20Stage%20Magellan%20Demo");
+	   	myInfo = myInfo.replace("analytics.eimdemo.com",host);
+	   	myInfo = myInfo.replace("CityTaxi","Dryv");
     	var myInfoWindow = new google.maps.InfoWindow({
     		content: myInfo,
 	    	maxHeight: 100
