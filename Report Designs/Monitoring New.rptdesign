@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201707031807</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201710020040</property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="layoutPreference">auto layout</property>
@@ -704,14 +704,15 @@ debugger;
 	if (!data || data.length == 0) {
 		return;
 	}
-    var host = "mag-app-ihub.eastus.cloudapp.azure.com";
+    var host = "td-magellan.eastus.cloudapp.azure.com";
 
 	for (var i = 0; i < data.length; i++) {
 	    var myURL;
 	    var alertStatus = "";
 	    if (data[i][6] > 0.6 &amp;&amp; data[i][6] < 0.8) alertStatus = "Alert2"; // Check elapsedTime for alert conditions
 	    else if (data[i][6] > 0.8) alertStatus = "Alert1";
-    	myURL = encodeURI("http://" + host + ":8700/iportal/servlet/DownloadFile?name=/Applications/Main Stage Magellan Demo/images/Icons/" +  data[i][3] + alertStatus + ".png&amp;showBanner=false&amp;userid=aminton&amp;password=OpenText1");
+    	// Car icons will not be shown when previewed. Must be deployed and logged into td-magellan's iHub for them to display on map
+    	myURL = encodeURI("http://" + host + "/iportal/servlet/DownloadFile?name=/Applications/Dryv/images/Icons/" +  data[i][3] + alertStatus + ".png&amp;showBanner=false");
 		var image = {
     		url: myURL,
     		size: new google.maps.Size(54, 54),
